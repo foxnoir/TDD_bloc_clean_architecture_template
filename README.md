@@ -28,6 +28,11 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
+      <a href="#roadmap">Roadmap</a>
+      <ul>
+        <li><a href="#domain-layer">Domain Layer</a></li>
+      </ul>
+    <li>
       <a href="#style-guide">Style Guide</a>
       <ul>
         <li><a href="#color-palette">Color Palette</a></li>
@@ -76,6 +81,66 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+---
+
+## Roadmap
+
+Work through the layers one after the other.
+
+### Domain Layer
+
+### <u>1. entities using [equatable](https://pub.dev/packages/equatable)</u>
+
+#### Why do we need `equatable` in Flutter?
+
+The `equatable` package is an essential tool in Flutter that simplifies object equality comparisons. It is particularly useful in scenarios such as state management and comparing data models. Here is a detailed explanation of why `equatable` is needed:
+
+#### Benefits of `equatable`
+
+1. **Simplifies Equality Comparisons**  
+   Dart’s default equality checks are based on reference equality (`==` compares object references). This can lead to issues when dealing with objects that should be compared by their values instead of their memory addresses.
+
+2. **Reduces Boilerplate Code**  
+   Without `equatable`, you would need to manually override `==` and `hashCode` for every class that requires custom equality comparison. `equatable` simplifies this by requiring only a `props` list to define the fields for comparison.
+
+3. **Essential for State Management**  
+   In state management solutions like **Bloc**, proper equality checks are critical for detecting state changes. `equatable` ensures that states are compared based on their property values, preventing unnecessary widget rebuilds.
+
+4. **Improves Code Readability**  
+   By removing verbose equality logic, `equatable` makes code cleaner and more maintainable.
+
+5. **Supports Better Testing**  
+   When writing unit tests, `equatable` allows you to compare objects directly without implementing custom equality logic.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### <u>2. repositories using [dartz](https://pub.dev/packages/dartz/versions)</u>
+
+#### Why do we need `dartz` in Flutter?
+
+The `dartz` package brings **functional programming concepts** to Dart, allowing developers to write safer and more expressive code. It is particularly useful for handling errors, managing optional values, and composing functional operations in Flutter apps.
+
+---
+
+#### Benefits of `dartz`
+
+1. **Provides `Either` for Error Handling**  
+   The `Either` type is a powerful way to handle success (`Right`) and failure (`Left`) in a single object. It eliminates the need for throwing exceptions and simplifies error propagation.
+
+2. **Optional Values with `Option`**  
+   `Option` helps manage nullable data without relying on `null`, enforcing safer code by explicitly handling the absence of a value.
+
+3. **Immutability Support**  
+   Functional programming principles like immutability are easy to implement with `dartz`, helping you build predictable and bug-free code.
+
+4. **Functional Programming Utilities**  
+   `dartz` includes functional constructs like `fold`, `map`, and `flatMap` for transforming and chaining operations cleanly.
+
+5. **Cleaner Code and Better Testing**  
+   By using `dartz`, your code becomes more declarative and testable, as error paths and nullable values are explicitly defined.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
@@ -131,6 +196,7 @@
 
 - [![Flutter][flutter]][flutter-url]
 - [![Dart][dart]][dart-url]
+- <img src="images/mockapi.png" alt="Logo" width="80" height="30">
 
 ### Libraries, Packages And Tools
 

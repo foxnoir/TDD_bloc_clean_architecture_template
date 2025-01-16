@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 
+///
+
 abstract class Failure extends Equatable {
   Failure({required this.message, required this.statusCode})
       : assert(
@@ -17,10 +19,19 @@ abstract class Failure extends Equatable {
   List<dynamic> get props => [message, statusCode];
 }
 
+/// local device
 class CacheFailure extends Failure {
   CacheFailure({required super.message, super.statusCode = 500});
 }
 
+class ApiFailure extends Failure {
+  ApiFailure({required super.message, required super.statusCode});
+
+  ApiFailure.fromException(ServerException exception)
+      : this(message: exception.message, statusCode: exception.statusCode);
+}
+
+/// api calls
 class ServerFailure extends Failure {
   ServerFailure({required super.message, required super.statusCode});
 
