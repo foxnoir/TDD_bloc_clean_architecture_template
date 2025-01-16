@@ -31,7 +31,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.sharedPreferences,
       preResolve: true,
     );
-    gh.singleton<_i119.LoggerService>(() => _i119.LoggerService());
+    gh.singleton<_i119.AppLogger>(() => _i119.AppLogger());
     return this;
   }
 }

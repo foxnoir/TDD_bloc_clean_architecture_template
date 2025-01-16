@@ -3,8 +3,8 @@ import 'package:logger/logger.dart';
 import 'package:tdd_clean_architecture/core/di/di.dart';
 
 @singleton
-class LoggerService {
-  LoggerService()
+class AppLogger {
+  AppLogger()
       : _logger = Logger(
           printer: PrettyPrinter(
             lineLength: 80,
@@ -39,4 +39,4 @@ class LoggerService {
   }
 }
 
-LoggerService get logger => DI.getIt<LoggerService>();
+AppLogger get logger => DI.getIt<AppLogger>();

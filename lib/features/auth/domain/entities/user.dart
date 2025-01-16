@@ -9,6 +9,16 @@ class User extends Equatable {
     required this.createdAt,
     required this.avatar,
   });
+
+  /// for testing
+  const User.empty()
+      : this(
+          avatar: 'empty.avatar',
+          createdAt: 'empty.createdAt',
+          id: 0,
+          name: 'empty.name',
+        );
+
   final int id;
   final String name;
   final String createdAt;

@@ -28,7 +28,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#clean-architecture-roadmap">Clean Architecture Roadmap</a>
       <ul>
         <li><a href="#domain-layer">Domain Layer</a></li>
       </ul>
@@ -84,7 +84,7 @@
 
 ---
 
-## Roadmap
+## Clean Architecture Roadmap
 
 Work through the layers one after the other.
 What the individual classes do is usually described in more detail in the classes themselves.
@@ -141,11 +141,19 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### <u>3. usecases
+### <u>3. usecases </u>
 
 Write a usecase for each functionality in a repository.
 
-# Why Are Use Cases Important in Clean Architecture?
+Write tests:
+
+- What does the class depend on?
+- How can we create a fake version of the dependency?
+- How do we control what our dependencies do?
+
+Implement usecase functionality.
+
+#### Why Are Use Cases Important in Clean Architecture?
 
 In **Clean Architecture**, use cases are at the core of the application’s business logic. They define **what** the application should do, regardless of **how** it is implemented. Here’s why they are crucial:
 
