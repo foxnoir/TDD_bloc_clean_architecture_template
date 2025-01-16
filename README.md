@@ -11,17 +11,17 @@
 
 <div align="center">
   <img src="images/logo.png" alt="Logo" width="80" height="80">
-  <h1 align="center">TDD, clean architecture</h1>
+  <h1 align="center">TDD and clean architecture</h1>
 
   <p align="left">
-     TDD, clean architecture and BloC Training app
+     TDD clean architecture dummy app inspired by 
+     <a href="https://github.com/dastagir-ahmed"><strong>Dastagir Ahmed</strong></a> .
   </p>
-
+  
   <p align="left">
     <a href="https://github.com/foxnoir/TTD_clean_architecture_dummy/tree/develop/lib"><strong>Explore the project »</strong></a>
     <br/>
   </p>
-
 </div>
 
 <details>
