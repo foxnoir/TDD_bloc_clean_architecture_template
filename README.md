@@ -87,6 +87,7 @@
 ## Roadmap
 
 Work through the layers one after the other.
+What the individual classes do is usually described in more detail in the classes themselves.
 
 ### Domain Layer
 
@@ -121,8 +122,6 @@ The `equatable` package is an essential tool in Flutter that simplifies object e
 
 The `dartz` package brings **functional programming concepts** to Dart, allowing developers to write safer and more expressive code. It is particularly useful for handling errors, managing optional values, and composing functional operations in Flutter apps.
 
----
-
 #### Benefits of `dartz`
 
 1. **Provides `Either` for Error Handling**  
@@ -139,6 +138,44 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
 
 5. **Cleaner Code and Better Testing**  
    By using `dartz`, your code becomes more declarative and testable, as error paths and nullable values are explicitly defined.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### <u>3. usecases
+
+Write a usecase for each functionality in a repository.
+
+# Why Are Use Cases Important in Clean Architecture?
+
+In **Clean Architecture**, use cases are at the core of the application’s business logic. They define **what** the application should do, regardless of **how** it is implemented. Here’s why they are crucial:
+
+#### What Is a Use Case?
+
+A **Use Case** is a class or function that represents a **specific task or action** the user or system performs within the application.
+
+**Examples:**
+
+- Logging in a user.
+- Fetching a list of items.
+- Submitting a form.
+
+#### Responsibilities of Use Cases
+
+1. **Encapsulating Business Logic**  
+   Use cases contain business rules and ensure no logic leaks into other layers, like the UI or data layers.
+
+2. **Framework Independence**  
+   Use cases are not tied to external libraries or UI technologies, making them platform-agnostic.
+
+3. **Communication Between Layers**  
+   Use cases act as a **bridge** between the **UI layer** and the **data layer**.
+
+#### Why Are Use Cases Important?
+
+- **Encapsulate Business Logic:** Keep the logic separate from the UI and data layers.
+- **Reusability:** Use cases can be shared across platforms.
+- **Testability:** They are easy to isolate and test.
+- **Separation of Concerns:** By separating concerns, they make the code more maintainable.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
