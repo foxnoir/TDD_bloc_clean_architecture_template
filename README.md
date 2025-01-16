@@ -105,11 +105,6 @@
 
 [Image comming soon]
 
-  <p align="left">
-    <a href="#References-to-the-images-used"><strong>References to the images used »</strong></a>
-    <br/>
-  </p>
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
@@ -210,11 +205,15 @@ flutter-app/
   ├── lib/
   │     ├── core/
   │     │     ├── di/
+  │     │     ├── errors/
+  │     │     ├── localization/
   │     │     ├── log/
+  │     │     ├── router/
   │     │     ├── theme/
+  │     │     ├── usecases/
   │     │     └── utils/
   │     ├── features/
-  │     │     └── hotels/
+  │     │     └── feature/
   │     │          ├── data/
   │     │          │     ├── models/
   │     │          │     ├── repositories/
@@ -222,11 +221,13 @@ flutter-app/
   │     │          ├── domain/
   │     │          │     ├── entities/
   │     │          │     ├── repositories/
-  │     │          │     └── use_cases/
+  │     │          │     └── usecases/
   │     │          └── presentation/
-  │     │                ├── screens/
+  │     │                ├── views/
   │     │                ├── widgets/
-  │     │                └── blocs/
+  │     │                └── bloc/
+  │     │     └── navigation/
+  │     │     └── storage/
   │     └── global_widgets
   │     └── main.dart
   ├── test/
@@ -236,44 +237,35 @@ flutter-app/
 
 ### **Feature-First Approach**
 
-The `features/` folder structure groups code by **feature domains** (e.g., `hotels/`), enabling better maintainability and scalability. Changes to one feature do not affect other modules.
+The `features/` folder structure groups code by **feature domains**, enabling better maintainability and scalability. Changes to one feature do not affect other modules.
 
 ### **Explanation**
 
 #### **Data**
 
-- **models/**: Defines **data models** that come from APIs, JSON, or local data sources.  
-  **Examples**: `hotel_model.dart`
+- **models/**: Defines **data models** that come from APIs, JSON, or local data sources.
 
-- **repositories/**: Contains **implementation of repository interfaces** from the domain layer.  
-  **Examples**: `hotel_repository_impl.dart`
+- **repositories/**: Contains **implementation of repository interfaces** from the domain layer.
 
-- **data_sources/**: Defines **remote or local data sources** that access the API (e.g., Dio) or a local database (e.g., Hive).  
-  **Examples**: `hotel_api_service.dart`, `local_hotel_data_source.dart`
+- **data_sources/**: Defines **remote or local data sources** that access the API (e.g., Dio) or a local database (e.g., Hive).
 
 #### **Domain**
 
-- **entities/**: Defines **"pure" objects** that reflect business logic (independent of API).  
-  **Examples**: `hotel_entity.dart`
+- **entities/**: Defines **"pure" objects** that reflect business logic (independent of API).
 
-- **repositories/**: Defines **abstract interfaces** for the repositories implemented in the **data layer**.  
-  **Examples**: `hotel_repository.dart`
+- **repositories/**: Defines **abstract interfaces** for the repositories implemented in the **data layer**.
 
 #### **Presentation**
 
-- **screens/**: Defines **main screens** displayed to the user.  
-  **Examples**: `hotel_list_screen.dart`, `hotel_detail_screen.dart`
+- **screens/**: Defines **main screens** displayed to the user.
 
-- **widgets/**: Contains **reusable widgets** used in multiple screens.  
-  **Examples**: `hotel_card.dart`, `loading_indicator.dart`
+- **widgets/**: Contains **reusable widgets** used in multiple screens.
 
-- **blocs/**: Contains **Bloc files** to manage the **state of the UI**.  
-  **Examples**: `hotel_bloc.dart`, `hotel_event.dart`, `hotel_state.dart`
+- **blocs/**: Contains **Bloc files** to manage the **state of the UI**.
 
 #### **Global Widgets**
 
-Contains **reusable widgets** that can be used across multiple screens.  
- **Examples**: `app_card.dart`, `app_icon.dart`
+Contains **reusable widgets** that can be used across multiple screens.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -281,17 +273,15 @@ Contains **reusable widgets** that can be used across multiple screens.
 
 | **Package**               | **Reason**                                                                                |
 | ------------------------- | ----------------------------------------------------------------------------------------- |
-| **GetIt**                 | For Dependency Injection and access to services without direct initialization.            |
-| **Injectable**            | Automatically generates DI configurations with `build_runner`, reducing boilerplate code. |
+| **bloc_test**             | Tests Bloc logic, verifying the sequence of state changes.                                |
 | **Dartz**                 | Provides "Functional Programming" concepts like `Either` for better error handling.       |
 | **Equatable**             | Facilitates object comparison by automatically overriding `==` and `hashCode`.            |
-| **Hive & Hive Flutter**   | Fast, lightweight, NoSQL database storage for quick local data storage.                   |
-| **Dio**                   | Robust HTTP client with simple error handling, interceptors, and request cancellation.    |
-| **connectivity_plus**     | Checks the network connection and provides real-time status updates.                      |
 | **flutter_localizations** | Supports multi-language localization and internationalization (l10n).                     |
+| **GetIt**                 | For Dependency Injection and access to services without direct initialization.            |
+| **Injectable**            | Automatically generates DI configurations with `build_runner`, reducing boilerplate code. |
 | **mocktail**              | Simple way to mock classes required for unit tests.                                       |
 | **very_good_analysis**    | Ensures a consistent code style and code quality through strict linter rules.             |
-| **bloc_test**             | Tests Bloc logic, verifying the sequence of state changes.                                |
+|                           |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -318,6 +308,8 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 - [Feature-first vs Layer-first Structure (Kody TechnoLab)](https://kodytechnolab.com/blog/layer-first-or-feature-first-flutter-project-structure/)
 - [Flutter Project Structure (Code with Andrea)](https://codewithandrea.com/articles/flutter-project-structure/)
 - [Dartz](https://medium.com/@samra.sajjad0001/exploring-the-purpose-and-usage-of-the-dartz-package-in-flutter-7902509939e9)
+- [TDD](https://www.browserstack.com/guide/tdd-in-flutter)
+- [clean architecture](https://dev.to/marwamejri/flutter-clean-architecture-1-an-overview-project-structure-4bhf)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
