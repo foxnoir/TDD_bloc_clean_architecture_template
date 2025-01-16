@@ -1,0 +1,124 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"pub",
+				"get"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter pub get",
+			"detail": "",
+			"group": "build"
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"clean"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter clean",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"doctor"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter doctor",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"pub",
+				"cache",
+				"clean"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter clean cache",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"packages",
+				"pub",
+				"run",
+				"build_runner",
+				"build",
+				"--delete-conflicting-outputs"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter build",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"doctor"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter doctor",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"test"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter test",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"gen-l10n"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter gen-l10n",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"packages",
+				"pub",
+				"run",
+				"build_runner",
+				"watch",
+				"--delete-conflicting-outputs"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter watch",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"build",
+				"aar"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "flutter: flutter build aar",
+			"detail": ""
+		}
+	]
+}
