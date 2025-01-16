@@ -11,11 +11,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:japanese_tutorials_app/core/di/register_module.dart' as _i172;
-import 'package:japanese_tutorials_app/core/log/logger.dart' as _i659;
-import 'package:japanese_tutorials_app/features/router/app_router.dart'
-    as _i177;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
+import 'package:tdd_clean_architecture/core/di/register_module.dart' as _i355;
+import 'package:tdd_clean_architecture/core/log/logger.dart' as _i119;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -33,10 +31,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.sharedPreferences,
       preResolve: true,
     );
-    gh.singleton<_i659.LoggerService>(() => _i659.LoggerService());
-    gh.singleton<_i177.AppRouter>(() => _i177.AppRouter(isTesting: gh<bool>()));
+    gh.singleton<_i119.LoggerService>(() => _i119.LoggerService());
     return this;
   }
 }
 
-class _$RegisterModule extends _i172.RegisterModule {}
+class _$RegisterModule extends _i355.RegisterModule {}

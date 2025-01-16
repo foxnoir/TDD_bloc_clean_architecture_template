@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:japanese_tutorials_app/core/di/di.dart';
 import 'package:logger/logger.dart';
+import 'package:tdd_clean_architecture/core/di/di.dart';
 
 @singleton
 class LoggerService {

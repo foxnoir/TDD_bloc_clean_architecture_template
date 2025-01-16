@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:injectable/injectable.dart';
 import 'package:tdd_clean_architecture/core/di/di.dart';
 import 'package:tdd_clean_architecture/core/log/logger.dart';
@@ -20,17 +19,17 @@ Future<void> _loadApp() async {
     await DI.getIt.reset();
     DI.getIt.registerSingleton<bool>(false);
     await configureInjection(Environment.dev);
-    runApp(JapanesTutorialApp());
+    runApp(DummyApp());
   } catch (ex, st) {
     logger.error('startup exception', error: ex, stackTrace: st);
   }
 }
 
-class JapanesTutorialApp extends StatelessWidget {
-  factory JapanesTutorialApp() => instance;
-  const JapanesTutorialApp._internal();
+class DummyApp extends StatelessWidget {
+  factory DummyApp() => instance;
+  const DummyApp._internal();
 
-  static const JapanesTutorialApp instance = JapanesTutorialApp._internal();
+  static const DummyApp instance = DummyApp._internal();
 
   @override
   Widget build(BuildContext context) {

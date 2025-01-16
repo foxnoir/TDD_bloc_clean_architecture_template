@@ -11,14 +11,14 @@
 
 <div align="center">
   <img src="images/logo.png" alt="Logo" width="80" height="80">
-  <h1 align="center">Group Chat</h1>
+  <h1 align="center">TDD, clean architecture</h1>
 
   <p align="left">
      TDD, clean architecture and BloC Training app
   </p>
 
   <p align="left">
-    <a href="https://github.com/foxnoir/japanese_tutorials_app/tree/develop/lib"><strong>Explore the project »</strong></a>
+    <a href="https://github.com/foxnoir/TTD_clean_architecture_dummy/tree/develop/lib"><strong>Explore the project »</strong></a>
     <br/>
   </p>
 
@@ -83,13 +83,13 @@
 
 ### Color Palette
 
-<img src="images/palette.jpg" alt="palette" width="65%" height="100%">
+[Image comming soon]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Fonts
 
-- [Default Flutter ios font (San Francisco)](https://developer.apple.com/fonts/)
+[Fonts comming soon]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,18 +136,12 @@
 
 - [![Flutter][flutter]][flutter-url]
 - [![Dart][dart]][dart-url]
-- [![Firebase][firebase]][firebase-url]
 
 ### Libraries, Packages And Tools
 
 - [![Very][very-good]][very-good-url]
-- **Local Storage**: Hive
-- **Dependency Injection**: GetIt & Injectable
-- **State Management**: Bloc & Flutter Bloc
-- **Network**: Dio
-- **Localization**: flutter_localizations & intl
-- **Secure Storage**: flutter_secure_storage
-- **Navigation**: Auto Route
+
+[more comming soon]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,11 +154,11 @@
 - Download or clone this repo by using the link or the SSH URL below:
 
 ```
-https://github.com/foxnoir/japanese_tutorials_app.git
+https://github.com/foxnoir/TTD_clean_architecture_dummy.git
 ```
 
 ```
-git@github.com:foxnoir/japanese_tutorials_app.git
+git@github.com:foxnoir/TTD_clean_architecture_dummy.git
 ```
 
 - Go to project root and execute the following command in console to get the required dependencies:
@@ -313,7 +307,7 @@ Contains **reusable widgets** that can be used across multiple screens.
 
 ## **Changelog**
 
-View changes and updates to the app [here](https://github.com/foxnoir/japanese_tutorials_app/blob/develop/CHANGELOG.md).
+View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_architecture_dummy/blob/develop/CHANGELOG.md).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:japanese_tutorials_app/core/errors/exceptions.dart';
+import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 
 abstract class Failure extends Equatable {
   Failure({required this.message, required this.statusCode})
