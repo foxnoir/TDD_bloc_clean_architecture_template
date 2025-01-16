@@ -1,9 +1,11 @@
+// Unit Test file for get_users.dartimport 'package:dartz/dartz.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
-import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
 
 import '../../../../mocks.mock.dart';
 
@@ -19,43 +21,35 @@ import '../../../../mocks.mock.dart';
 /// equals is always not necessary, often safer
 
 void main() {
-  late CreateUser _usecase;
+  late GetUsers _usecase;
   late AuthRepository _repo;
 
-  const params = CreateUserParams.empty();
+  final _tResponse = List<User>.empty();
 
   setUp(() {
     _repo = MockAuthRepository();
-    _usecase = CreateUser(_repo);
+    _usecase = GetUsers(_repo);
   });
 
   test(
-    'should call the [AuthRepo.createUser]',
+    'should call the [AuthRepo.getUsers] and return a [List<User>]',
     () async {
       /// that's what it should be
       when(
-        () => _repo.createUser(
-          avatar: any(named: 'avatar'),
-          createdAt: any(named: 'createdAt'),
-          name: any(named: 'name'),
-        ),
+        () => _repo.getUsers(),
       ).thenAnswer(
-        (_) async => const Right(null),
+        (_) async => Right(_tResponse),
       );
 
       /// actually calling
-      final result = await _usecase(params: params);
+      final result = await _usecase();
 
       /// what we EXPECTED what it should be
-      expect(result, equals(const Right<Failure, void>(null)));
+      expect(result, equals(Right<Failure, List<User>>(_tResponse)));
 
       /// verify if the function was called and was called only once
       verify(
-        () => _repo.createUser(
-          avatar: params.avatar,
-          createdAt: params.createdAt,
-          name: params.name,
-        ),
+        () => _repo.getUsers(),
       ).called(1);
 
       /// verify if there are no more interactions

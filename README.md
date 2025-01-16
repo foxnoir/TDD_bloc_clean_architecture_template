@@ -54,8 +54,11 @@
       </ul>
     </li>
     <li><a href="#tech-stack">Tech Stack</a></li>
-        <ul>
+      <ul>
         <li><a href="#build-with">Build With</a></li>
+      </ul>
+      <ul>
+        <li><a href="#most-important-packages-and-tools">Most important Packages and Tools</a></li>
       </ul>
     <li><a href="#getting-started">Getting Started</a></li>
         <ul>
@@ -241,13 +244,24 @@ A **Use Case** is a class or function that represents a **specific task or actio
 
 - [![Flutter][flutter]][flutter-url]
 - [![Dart][dart]][dart-url]
-- <img src="images/mockapi.png" alt="Logo" width="80" height="30">
+- [![Mockapi][mockapi]][mockapi-url]
 
-### Libraries, Packages And Tools
+### Most Important Packages and Tools
 
-- [![Very][very-good]][very-good-url]
-
-[more comming soon]
+[![Auto Route][auto-route]][auto-route-url]
+[![Bloc][bloc]][bloc-url]
+[![Dartz][dartz]][dartz-url]
+[![Dio][dio]][dio-url]
+[![Equatable][equatable]][equatable-url]
+[![Flutter Bloc][flutter-bloc]][flutter-bloc-url]
+[![Flutter Localizations][flutter-localizations]][flutter-localizations-url]
+[![Flutter Secure Storage][flutter-secure-storage]][flutter-secure-storage-url]
+[![GetIt][get-it]][get-it-url]
+[![Hive][hive]][hive-url]
+[![Injectable][injectable]][injectable-url]
+[![Intl][intl]][intl-url]
+[![Mocktail][mocktail]][mocktail-url]
+[![Very Good Analysis][very-good]][very-good-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -421,22 +435,53 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 - [Dartz](https://medium.com/@samra.sajjad0001/exploring-the-purpose-and-usage-of-the-dartz-package-in-flutter-7902509939e9)
 - [TDD](https://www.browserstack.com/guide/tdd-in-flutter)
 - [clean architecture](https://dev.to/marwamejri/flutter-clean-architecture-1-an-overview-project-structure-4bhf)
+- [Mocktail](https://www.dbestech.com/tutorials/flutter-test-with-mocktail)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+[auto-route]: https://img.shields.io/badge/Auto%20Route-00D09C.svg?style=for-the-badge&logo=autoroute&logoColor=white
+[auto-route-url]: https://pub.dev/packages/auto_route
 
-[dart]: https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white
+[auto-route]: https://img.shields.io/badge/Auto%20Route-00D09C.svg?style=for-the-badge&logo=autoroute&logoColor=white
+[auto-route-url]: https://pub.dev/packages/auto_route
+[bloc]: https://img.shields.io/badge/Bloc-8B0000.svg?style=for-the-badge&logo=bloc&logoColor=white
+[bloc-url]: https://pub.dev/packages/bloc
+[dart]: https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white
 [dart-url]: https://dart.dev/
-[firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
+[dio]: https://img.shields.io/badge/Dio-FE5000.svg?style=for-the-badge&logo=internet-explorer&logoColor=white
+[dio-url]: https://pub.dev/packages/dio
+[dartz]: https://img.shields.io/badge/Dartz-1C4E80.svg?style=for-the-badge&logo=dart&logoColor=white
+[dartz-url]: https://pub.dev/packages/dartz
+[equatable]: https://img.shields.io/badge/Equatable-32CD32.svg?style=for-the-badge&logo=equatable&logoColor=white
+[equatable-url]: https://pub.dev/packages/equatable
+[firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase&logoColor=white
 [firebase-url]: https://firebase.google.com/
-[flutter]: https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white
+[flutter]: https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white
 [flutter-url]: https://flutter.dev/
-[instagram-shield]: https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white
+[flutter-bloc]: https://img.shields.io/badge/Flutter%20Bloc-2E86C1.svg?style=for-the-badge&logo=flutter&logoColor=white
+[flutter-bloc-url]: https://pub.dev/packages/flutter_bloc
+[flutter-localizations]: https://img.shields.io/badge/Flutter%20Localizations-0170F3.svg?style=for-the-badge&logo=flutter&logoColor=white
+[flutter-localizations-url]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+[flutter-secure-storage]: https://img.shields.io/badge/Flutter%20Secure%20Storage-2F4F4F.svg?style=for-the-badge&logo=lock&logoColor=white
+[flutter-secure-storage-url]: https://pub.dev/packages/flutter_secure_storage
+[get-it]: https://img.shields.io/badge/GetIt-007ACC.svg?style=for-the-badge&logo=getit&logoColor=white
+[get-it-url]: https://pub.dev/packages/get_it
+[hive]: https://img.shields.io/badge/Hive-FFB300.svg?style=for-the-badge&logo=hive&logoColor=white
+[hive-url]: https://pub.dev/packages/hive
+[injectable]: https://img.shields.io/badge/Injectable-009688.svg?style=for-the-badge&logo=injectable&logoColor=white
+[injectable-url]: https://pub.dev/packages/injectable
+[intl]: https://img.shields.io/badge/Intl-FFA500.svg?style=for-the-badge&logo=dart&logoColor=white
+[intl-url]: https://pub.dev/packages/intl
+[instagram-shield]: https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white
 [instagram-url]: https://www.instagram.com/codeincouture/
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/badge/License-MIT-%23000000.svg?style=for-the-badge&logo=license&logoColor=white
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/tanja-polz-5636401a5/
-[twitter-shield]: https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white
+[mockapi]: https://img.shields.io/badge/MockAPI-9cf.svg?style=for-the-badge&logo=api&logoColor=white
+[mockapi-url]: https://mockapi.io/projects
+[mocktail]: https://img.shields.io/badge/Mocktail-blue.svg?style=for-the-badge&logo=dart&logoColor=white
+[mocktail-url]: https://pub.dev/packages/mocktail
+[twitter-shield]: https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=twitter&logoColor=white
 [twitter-url]: https://twitter.com/_foxnoir_?lang=de
-[very-good]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
+[very-good]: https://img.shields.io/badge/Very%20Good%20Analysis-B22C89.svg?style=for-the-badge&logo=verygood&logoColor=white
 [very-good-url]: https://pub.dev/packages/very_good_analysis
