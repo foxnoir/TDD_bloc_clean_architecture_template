@@ -149,7 +149,7 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
 
 #### 3. <ins>usecases</ins>
 
-Write a usecase for each functionality in a repository.
+Write a usecase for each methos functionality in a repository.
 
 Write tests:
 
@@ -157,7 +157,7 @@ Write tests:
 - How can we create a fake version of the dependency?
 - How do we control what our dependencies do?
 
-Implement usecase functionality.
+Get tests past. (Implement usecase methos functionality.)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -205,7 +205,13 @@ Create Models.
 
 Write test using json-files to mimic server.
 
-#### 2. <ins>write test for models </ins>
+#### 2. <ins>Implement Repositories</ins>
+
+Create datasource interface, datasource impl. and implement repos. (no logic)
+
+Write tests.
+
+Get tests past. (Implement repo methos functionality.)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

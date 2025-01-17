@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
-import 'package:tdd_clean_architecture/features/auth/data/models/user/user_model.dart';
+import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
 import '../../../../../fixtures/fixture_reader.dart';

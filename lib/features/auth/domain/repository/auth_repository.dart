@@ -5,7 +5,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 /// Domain layer is not directly dealing with Exceptions (clean architecture)
 /// => uses dartz for seperating interfaces
 ///
-/// don't test contract / interfaces
+/// defines methods
 
 abstract class AuthRepository {
   const AuthRepository();
