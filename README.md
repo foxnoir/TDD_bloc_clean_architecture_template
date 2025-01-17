@@ -199,7 +199,7 @@ A **Use Case** is a class or function that represents a **specific task or actio
 
 ### Data Layer
 
-#### 1. <ins>models extenting entities using [freezed](https://pub.dev/packages/freezed)</ins>
+#### 1. <ins>models extenting entities using [mappable](https://pub.dev/packages/dart_mappable)</ins>
 
 Create Models.
 
@@ -483,8 +483,6 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 [flutter-localizations-url]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 [flutter-secure-storage]: https://img.shields.io/badge/Flutter%20Secure%20Storage-2F4F4F.svg?style=for-the-badge&logo=lock&logoColor=white
 [flutter-secure-storage-url]: https://pub.dev/packages/flutter_secure_storage
-[freezed]: https://img.shields.io/badge/Freezed-0D47A1.svg?style=for-the-badge&logo=dart&logoColor=white
-[freezed-url]: https://pub.dev/packages/freezed
 [get-it]: https://img.shields.io/badge/GetIt-007ACC.svg?style=for-the-badge&logo=getit&logoColor=white
 [get-it-url]: https://pub.dev/packages/get_it
 [hive]: https://img.shields.io/badge/Hive-FFB300.svg?style=for-the-badge&logo=hive&logoColor=white
@@ -499,6 +497,8 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/tanja-polz-5636401a5/
+[mappable]: https://img.shields.io/badge/Dart%20Mappable-008080.svg?style=for-the-badge&logo=dart&logoColor=white
+[mappable-url]: https://pub.dev/packages/dart_mappable
 [mockapi]: https://img.shields.io/badge/MockAPI-9cf.svg?style=for-the-badge&logo=api&logoColor=white
 [mockapi-url]: https://mockapi.io/projects
 [mocktail]: https://img.shields.io/badge/Mocktail-blue.svg?style=for-the-badge&logo=dart&logoColor=white

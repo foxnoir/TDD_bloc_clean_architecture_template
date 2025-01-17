@@ -1,41 +1,33 @@
-import 'dart:convert';
+import 'package:dart_mappable/dart_mappable.dart';
 import 'package:equatable/equatable.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
-part 'user_model.freezed.dart';
-part 'user_model.g.dart';
+part 'user_model.mapper.dart';
 
-@freezed
-class UserModel extends Equatable with _$UserModel, User {
-  const factory UserModel({
-    required String id,
-    required String name,
-    required String createdAt,
-    required String avatar,
-  }) = _UserModel;
+@MappableClass()
+class UserModel extends Equatable with User {
+  const UserModel({
+    required this.id,
+    required this.name,
+    required this.createdAt,
+    required this.avatar,
+  });
 
-  const UserModel._();
+  const UserModel.empty()
+      : id = '1',
+        name = '_empty.name',
+        createdAt = '_empty.createdAt',
+        avatar = '_empty.avatar';
 
-  /// Leere UserModel-Instanz
-  factory UserModel.empty() => const UserModel(
-        id: '1',
-        name: '_empty.name',
-        createdAt: '_empty.createdAt',
-        avatar: '_empty.avatar',
-      );
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final String createdAt;
+  @override
+  final String avatar;
 
-  /// JSON Parsing
-  factory UserModel.fromJson(Map<String, dynamic> json) =>
-      _$UserModelFromJson(json);
-
-  factory UserModel.fromMap(DataMap map) => UserModel(
-        id: map['id'] as String,
-        name: map['name'] as String,
-        createdAt: map['createdAt'] as String,
-        avatar: map['avatar'] as String,
-      );
-
-  DataMap toMap() => toJson();
+  @override
+  List<Object?> get props => [id, name, createdAt, avatar];
 }
