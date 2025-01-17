@@ -97,7 +97,7 @@ What the individual classes do is usually described in more detail in the classe
 
 ### Domain Layer
 
-### <u>1. entities using [equatable](https://pub.dev/packages/equatable)</u>
+#### <ins>1. entities using [equatable](https://pub.dev/packages/equatable)</ins>
 
 #### Why do we need `equatable` in Flutter?
 
@@ -122,7 +122,7 @@ The `equatable` package is an essential tool in Flutter that simplifies object e
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### <u>2. repositories using [dartz](https://pub.dev/packages/dartz/versions)</u>
+#### <ins>2. repositories using [dartz](https://pub.dev/packages/dartz/versions)</ins>
 
 #### Why do we need `dartz` in Flutter?
 
@@ -147,7 +147,7 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### <u>3. usecases </u>
+#### <ins>3. usecases </ins>
 
 Write a usecase for each functionality in a repository.
 
@@ -199,13 +199,13 @@ A **Use Case** is a class or function that represents a **specific task or actio
 
 ### Data Layer
 
-### <u>1. models extenting entities </u>
+#### <ins>1. models extenting entities </ins>
 
 Create Models.
 
 Write test using json-files to mimic server.
 
-### <u>2. write test for models </u>
+#### <ins>2. write test for models </ins>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
