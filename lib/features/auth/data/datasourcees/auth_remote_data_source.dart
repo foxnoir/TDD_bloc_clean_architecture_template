@@ -1,6 +1,6 @@
 /// remote = talks to "outside" server
 ///
-/// don't use typeDefs here (e.g. Resultfuture, ResultVoid)
+/// don't use typeDefs here (e.g. Resultfuture, ResultFutureVoid)
 /// if errror occurs in datasource you throw CUSTOM exception
 ///
 ///  ALWAYS returns model NOT !!! entities

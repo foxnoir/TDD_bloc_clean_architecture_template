@@ -5,7 +5,7 @@ import 'package:tdd_clean_architecture/core/errors/failures.dart';
 
 typedef ResultFuture<T> = Future<Either<Failure, T>>;
 
-typedef ResultVoid = ResultFuture<void>;
+typedef ResultFutureVoid = ResultFuture<void>;
 
 typedef Result<T> = Either<Failure, T>;
 

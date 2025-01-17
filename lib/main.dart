@@ -19,17 +19,17 @@ Future<void> _loadApp() async {
     await DI.getIt.reset();
     DI.getIt.registerSingleton<bool>(false);
     await configureInjection(Environment.dev);
-    runApp(DummyApp());
+    runApp(TemplateApp());
   } catch (ex, st) {
     logger.error('startup exception', error: ex, stackTrace: st);
   }
 }
 
-class DummyApp extends StatelessWidget {
-  factory DummyApp() => instance;
-  const DummyApp._internal();
+class TemplateApp extends StatelessWidget {
+  factory TemplateApp() => instance;
+  const TemplateApp._internal();
 
-  static const DummyApp instance = DummyApp._internal();
+  static const TemplateApp instance = TemplateApp._internal();
 
   @override
   Widget build(BuildContext context) {

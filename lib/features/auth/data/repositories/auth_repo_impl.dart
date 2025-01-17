@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/data/datasourcees/auth_remote_data_source.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
@@ -13,12 +14,17 @@ class AuthRepoImpl implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
 
   @override
-  ResultVoid createUser(
-      {required String avatar,
-      required String createdAt,
-      required String name}) {
-    // TODO: implement createUser
-    throw UnimplementedError();
+  ResultFutureVoid createUser({
+    required String avatar,
+    required String createdAt,
+    required String name,
+  }) async {
+    await _remoteDataSource.createUser(
+      avatar: avatar,
+      createdAt: createdAt,
+      name: name,
+    );
+    return const Right(null);
   }
 
   @override

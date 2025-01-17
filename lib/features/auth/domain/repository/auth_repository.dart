@@ -10,7 +10,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 abstract class AuthRepository {
   const AuthRepository();
 
-  ResultVoid createUser({
+  ResultFutureVoid createUser({
     required String avatar,
     required String createdAt,
     required String name,

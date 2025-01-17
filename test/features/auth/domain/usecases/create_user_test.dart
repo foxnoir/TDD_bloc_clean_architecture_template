@@ -25,14 +25,15 @@ void main() {
   const params = CreateUserParams.empty();
 
   setUp(() {
+    /// Arrange: Setup the dependencies
     repo = MockAuthRepository();
     usecase = CreateUser(repo);
   });
 
   test(
-    'should call the [AuthRepo.createUser]',
+    'Usecase CREATE_USER should call the [AuthRepo.createUser]',
     () async {
-      /// that's what it should be
+      /// Arrange
       when(
         () => repo.createUser(
           avatar: any(named: 'avatar'),
@@ -43,13 +44,13 @@ void main() {
         (_) async => const Right(null),
       );
 
-      /// actually calling
+      /// Act
       final result = await usecase(params: params);
 
-      /// what we EXPECTED what it should be
+      /// Assert
       expect(result, equals(const Right<Failure, void>(null)));
 
-      /// verify if the function was called and was called only once
+      /// Verify the method was called with expected arguments
       verify(
         () => repo.createUser(
           avatar: params.avatar,
@@ -58,7 +59,7 @@ void main() {
         ),
       ).called(1);
 
-      /// verify if there are no more interactions
+      /// Verify there were no other interactions
       verifyNoMoreInteractions(repo);
     },
   );

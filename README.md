@@ -14,12 +14,12 @@
   <h1 align="center">TDD and clean architecture</h1>
 
   <p align="left">
-     TDD clean architecture dummy app inspired by 
+     TDD clean architecture template app inspired by 
      <a href="https://github.com/dastagir-ahmed"><strong>Dastagir Ahmed</strong></a> .
   </p>
   
   <p align="left">
-    <a href="https://github.com/foxnoir/TTD_clean_architecture_dummy/tree/develop/lib"><strong>Explore the project »</strong></a>
+    <a href="https://github.com/foxnoir/TTD_clean_architecture_template/tree/develop/lib"><strong>Explore the project »</strong></a>
     <br/>
   </p>
 </div>
@@ -60,8 +60,8 @@
       <ul>
         <li><a href="#build-with">Build With</a></li>
       </ul>
-      <ul>
-        <li><a href="#most-important-packages-and-tools">Most important Packages and Tools</a></li>
+    <ul>
+        <li><a href="#most-important-packages-and-tools-used">Most important Packages and Tools used</a></li>
       </ul>
     <li><a href="#getting-started">Getting Started</a></li>
         <ul>
@@ -158,6 +158,7 @@ Write tests:
 - How do we control what our dependencies do?
 
 Get tests past. (Implement usecase methos functionality.)
+First Happy Cases, then try/catch (error handling).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -212,6 +213,7 @@ Create datasource interface, datasource impl. and implement repos. (no logic)
 Write tests.
 
 Get tests past. (Implement repo methos functionality.)
+First Happy Cases, then try/catch (error handling).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -271,7 +273,7 @@ Get tests past. (Implement repo methos functionality.)
 - [![Dart][dart]][dart-url]
 - [![Mockapi][mockapi]][mockapi-url]
 
-### Most Important Packages and Tools
+### Most Important Packages and Tools used
 
 [![Auto Route][auto-route]][auto-route-url]
 [![Bloc][bloc]][bloc-url]
@@ -281,7 +283,6 @@ Get tests past. (Implement repo methos functionality.)
 [![Flutter Bloc][flutter-bloc]][flutter-bloc-url]
 [![Flutter Localizations][flutter-localizations]][flutter-localizations-url]
 [![Flutter Secure Storage][flutter-secure-storage]][flutter-secure-storage-url]
-[![Freezed][freezed]][freezed-url]
 [![GetIt][get-it]][get-it-url]
 [![Hive][hive]][hive-url]
 [![Injectable][injectable]][injectable-url]
@@ -301,11 +302,11 @@ Get tests past. (Implement repo methos functionality.)
 - Download or clone this repo by using the link or the SSH URL below:
 
 ```
-https://github.com/foxnoir/TTD_clean_architecture_dummy.git
+https://github.com/foxnoir/TTD_clean_architecture_template.git
 ```
 
 ```
-git@github.com:foxnoir/TTD_clean_architecture_dummy.git
+git@github.com:foxnoir/TTD_clean_architecture_template.git
 ```
 
 - Go to project root and execute the following command in console to get the required dependencies:
@@ -449,7 +450,7 @@ Contains **reusable widgets** that can be used across multiple screens.
 
 ## **Changelog**
 
-View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_architecture_dummy/blob/develop/CHANGELOG.md).
+View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_architecture_template/blob/develop/CHANGELOG.md).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

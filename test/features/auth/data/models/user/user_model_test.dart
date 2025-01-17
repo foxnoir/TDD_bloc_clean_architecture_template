@@ -12,48 +12,77 @@ void main() {
   final tJson = fixture('user.json');
   final tMap = jsonDecode(tJson) as DataMap;
 
-  group('USERMODEL:', () {
+  group('USER_MODEL', () {
     test('should be a subclass of [User] entity', () {
+      // Assert
       expect(tModel, isA<User>());
     });
 
     test(
       'fromMap should return a [UserModel] with the right data',
       () {
+        // Arrange
+        final expected = tModel;
+
+        // Act
         final result = UserModelMapper.fromMap(tMap);
-        expect(result, equals(tModel));
+
+        // Assert
+        expect(result, equals(expected));
       },
     );
 
     test(
       'fromJson should return a [UserModel] with the right data',
       () {
+        // Arrange
+        final expected = tModel;
+
+        // Act
         final result = UserModelMapper.fromJson(tJson);
-        expect(result, equals(tModel));
+
+        // Assert
+        expect(result, equals(expected));
       },
     );
 
     test('toMap should return a [Map] with the right data', () {
+      // Arrange
+      final expected = tMap;
+
+      // Act
       final result = tModel.toMap();
-      expect(result, equals(tMap));
+
+      // Assert
+      expect(result, equals(expected));
     });
 
     test('toJson should return a [JSON] with the right data', () {
-      final result = tModel.toJson();
-      final tJson = jsonEncode({
+      // Arrange
+      final expected = jsonEncode({
         'id': '_empty.id',
         'name': '_empty.name',
         'createdAt': '_empty.createdAt',
         'avatar': '_empty.avatar',
       });
 
-      expect(result, tJson);
+      // Act
+      final result = tModel.toJson();
+
+      // Assert
+      expect(result, expected);
     });
 
     test('copyWith should return a [UserModel] with different data', () {
-      final updatedModel = tModel.copyWith(name: 'Updated Name');
-      expect(updatedModel.name, equals('Updated Name'));
-      expect(updatedModel.id, equals(tModel.id));
+      // Arrange
+      const updatedName = 'Updated Name';
+
+      // Act
+      final updatedModel = tModel.copyWith(name: updatedName);
+
+      // Assert
+      expect(updatedModel.name, equals(updatedName));
+      expect(updatedModel.id, equals(tModel.id)); // Unchanged
     });
   });
 }

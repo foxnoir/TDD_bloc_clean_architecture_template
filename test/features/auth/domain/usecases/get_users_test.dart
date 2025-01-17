@@ -31,8 +31,10 @@ void main() {
   });
 
   test(
-    'should call the [AuthRepo.getUsers] and return a [List<User>]',
+    'Usecase GET_USERS should call the [AuthRepo.getUsers] '
+    'and return a [List<User>]',
     () async {
+      // Arrange
       /// that's what it should be
       when(
         () => repo.getUsers(),
@@ -40,9 +42,10 @@ void main() {
         (_) async => Right(_tResponse),
       );
 
-      /// actually calling
+      // Act
       final result = await usecase();
 
+      // Assert
       /// what we EXPECTED what it should be
       expect(result, equals(Right<Failure, List<User>>(_tResponse)));
 
