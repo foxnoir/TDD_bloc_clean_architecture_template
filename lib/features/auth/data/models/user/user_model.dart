@@ -5,7 +5,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 part 'user_model.mapper.dart';
 
 @MappableClass()
-class UserModel extends Equatable with User {
+class UserModel extends Equatable with User, UserModelMappable {
   const UserModel({
     required this.id,
     required this.name,
