@@ -11,8 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  freezed_annotation: any
   flutter_localizations:
     sdk: flutter
+  freezed: any
   intl: ^0.19.0
   bloc: ^9.0.0
   flutter_bloc: ^9.0.0
