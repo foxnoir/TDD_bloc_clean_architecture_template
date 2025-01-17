@@ -1,6 +1,4 @@
-// Unit Test file for user_model.dartimport 'package:dartz/dartz.dart';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
@@ -14,16 +12,25 @@ void main() {
   final tJson = fixture('user.json');
   final tMap = jsonDecode(tJson) as DataMap;
 
+  /// with mappable toMap/toJson testing not neeeded
+
   test('should be a subclass of [User] entity', () {
     expect(tModel, isA<User>());
   });
 
-  group('fromMap', () {
-    test(
-      'should return s [UserModel] with the right data',
-      () {
-        final tJson = File('test/fixtures/user.json').readAsStringSync();
-      },
-    );
-  });
+  test(
+    'fromMap should return a [UserModel] with the right data',
+    () {
+      final result = UserModelMapper.fromMap(tMap);
+      expect(result, equals(tModel));
+    },
+  );
+
+  test(
+    'fromJson should return a [UserModel] with the right data',
+    () {
+      final result = UserModelMapper.fromJson(tJson);
+      expect(result, equals(tModel));
+    },
+  );
 }

@@ -280,6 +280,7 @@ Write test using json-files to mimic server.
 [![Hive][hive]][hive-url]
 [![Injectable][injectable]][injectable-url]
 [![Intl][intl]][intl-url]
+[![Mappable][mappable]][mappable-url]
 [![Mocktail][mocktail]][mocktail-url]
 [![Very Good Analysis][very-good]][very-good-url]
 

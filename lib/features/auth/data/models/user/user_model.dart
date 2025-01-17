@@ -13,11 +13,12 @@ class UserModel extends Equatable with User {
     required this.avatar,
   });
 
-  const UserModel.empty()
-      : id = '1',
-        name = '_empty.name',
-        createdAt = '_empty.createdAt',
-        avatar = '_empty.avatar';
+  factory UserModel.empty() => const UserModel(
+        id: '_empty.id',
+        name: '_empty.name',
+        createdAt: '_empty.createdAt',
+        avatar: '_empty.avatar',
+      );
 
   @override
   final String id;
