@@ -32,6 +32,9 @@
       <ul>
         <li><a href="#domain-layer">Domain Layer</a></li>
       </ul>
+      <ul>
+        <li><a href="#data-layer">Data Layer</a></li>
+      </ul>
     <li>
       <a href="#style-guide">Style Guide</a>
       <ul>
@@ -156,6 +159,8 @@ Write tests:
 
 Implement usecase functionality.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 #### Why Are Use Cases Important in Clean Architecture?
 
 In **Clean Architecture**, use cases are at the core of the application’s business logic. They define **what** the application should do, regardless of **how** it is implemented. Here’s why they are crucial:
@@ -169,6 +174,8 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - Logging in a user.
 - Fetching a list of items.
 - Submitting a form.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### Responsibilities of Use Cases
 
@@ -187,6 +194,18 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - **Reusability:** Use cases can be shared across platforms.
 - **Testability:** They are easy to isolate and test.
 - **Separation of Concerns:** By separating concerns, they make the code more maintainable.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Data Layer
+
+### <u>1. models extenting entities </u>
+
+Create Models.
+
+Write test using json-files to mimic server.
+
+### <u>2. write test for models </u>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
