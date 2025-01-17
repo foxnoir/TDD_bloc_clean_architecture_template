@@ -1,29 +1,12 @@
 import 'package:equatable/equatable.dart';
 
 /// blueprint of data passed around layers in specific feature
-
-class User extends Equatable {
-  const User({
-    required this.id,
-    required this.name,
-    required this.createdAt,
-    required this.avatar,
-  });
-
-  /// for testing
-  const User.empty()
-      : this(
-          avatar: 'empty.avatar',
-          createdAt: 'empty.createdAt',
-          id: 'empty.id',
-          name: 'empty.name',
-        );
-
-  final String id;
-  final String name;
-  final String createdAt;
-  final String avatar;
+mixin User on Equatable {
+  String get id;
+  String get name;
+  String get createdAt;
+  String get avatar;
 
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [id, name, createdAt, avatar];
 }

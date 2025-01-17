@@ -19,14 +19,14 @@ import '../../../../mocks.mock.dart';
 /// equals is always not necessary, often safer
 
 void main() {
-  late CreateUser _usecase;
-  late AuthRepository _repo;
+  late CreateUser usecase;
+  late AuthRepository repo;
 
   const params = CreateUserParams.empty();
 
   setUp(() {
-    _repo = MockAuthRepository();
-    _usecase = CreateUser(_repo);
+    repo = MockAuthRepository();
+    usecase = CreateUser(repo);
   });
 
   test(
@@ -34,7 +34,7 @@ void main() {
     () async {
       /// that's what it should be
       when(
-        () => _repo.createUser(
+        () => repo.createUser(
           avatar: any(named: 'avatar'),
           createdAt: any(named: 'createdAt'),
           name: any(named: 'name'),
@@ -44,14 +44,14 @@ void main() {
       );
 
       /// actually calling
-      final result = await _usecase(params: params);
+      final result = await usecase(params: params);
 
       /// what we EXPECTED what it should be
       expect(result, equals(const Right<Failure, void>(null)));
 
       /// verify if the function was called and was called only once
       verify(
-        () => _repo.createUser(
+        () => repo.createUser(
           avatar: params.avatar,
           createdAt: params.createdAt,
           name: params.name,
@@ -59,7 +59,7 @@ void main() {
       ).called(1);
 
       /// verify if there are no more interactions
-      verifyNoMoreInteractions(_repo);
+      verifyNoMoreInteractions(repo);
     },
   );
 }

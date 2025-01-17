@@ -21,14 +21,14 @@ import '../../../../mocks.mock.dart';
 /// equals is always not necessary, often safer
 
 void main() {
-  late GetUsers _usecase;
-  late AuthRepository _repo;
+  late GetUsers usecase;
+  late AuthRepository repo;
 
   final _tResponse = List<User>.empty();
 
   setUp(() {
-    _repo = MockAuthRepository();
-    _usecase = GetUsers(_repo);
+    repo = MockAuthRepository();
+    usecase = GetUsers(repo);
   });
 
   test(
@@ -36,24 +36,24 @@ void main() {
     () async {
       /// that's what it should be
       when(
-        () => _repo.getUsers(),
+        () => repo.getUsers(),
       ).thenAnswer(
         (_) async => Right(_tResponse),
       );
 
       /// actually calling
-      final result = await _usecase();
+      final result = await usecase();
 
       /// what we EXPECTED what it should be
       expect(result, equals(Right<Failure, List<User>>(_tResponse)));
 
       /// verify if the function was called and was called only once
       verify(
-        () => _repo.getUsers(),
+        () => repo.getUsers(),
       ).called(1);
 
       /// verify if there are no more interactions
-      verifyNoMoreInteractions(_repo);
+      verifyNoMoreInteractions(repo);
     },
   );
 }

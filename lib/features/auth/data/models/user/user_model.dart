@@ -1,55 +1,41 @@
 import 'dart:convert';
-
+import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
-class UserModel extends User {
-  const UserModel({
-    required super.avatar,
-    required super.id,
-    required super.createdAt,
-    required super.name,
-  });
+part 'user_model.freezed.dart';
+part 'user_model.g.dart';
 
-  const UserModel.empty()
-      : this(
-          id: '1',
-          createdAt: '_empty.createdAt',
-          name: '_empty.name',
-          avatar: '_empty.avatar',
-        );
+@freezed
+class UserModel extends Equatable with _$UserModel, User {
+  const factory UserModel({
+    required String id,
+    required String name,
+    required String createdAt,
+    required String avatar,
+  }) = _UserModel;
 
-  factory UserModel.fromJson(String source) =>
-      UserModel.fromMap(jsonDecode(source) as DataMap);
+  const UserModel._();
 
-  UserModel.fromMap(DataMap map)
-      : this(
-          avatar: map['avatar'] as String,
-          id: map['id'] as String,
-          createdAt: map['createdAt'] as String,
-          name: map['name'] as String,
-        );
+  /// Leere UserModel-Instanz
+  factory UserModel.empty() => const UserModel(
+        id: '1',
+        name: '_empty.name',
+        createdAt: '_empty.createdAt',
+        avatar: '_empty.avatar',
+      );
 
-  UserModel copyWith({
-    String? avatar,
-    String? id,
-    String? createdAt,
-    String? name,
-  }) {
-    return UserModel(
-      avatar: avatar ?? this.avatar,
-      id: id ?? this.id,
-      createdAt: createdAt ?? this.createdAt,
-      name: name ?? this.name,
-    );
-  }
+  /// JSON Parsing
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 
-  DataMap toMap() => {
-        'id': id,
-        'avatar': avatar,
-        'createdAt': createdAt,
-        'name': name,
-      };
+  factory UserModel.fromMap(DataMap map) => UserModel(
+        id: map['id'] as String,
+        name: map['name'] as String,
+        createdAt: map['createdAt'] as String,
+        avatar: map['avatar'] as String,
+      );
 
-  String toJson() => jsonEncode(toMap());
+  DataMap toMap() => toJson();
 }

@@ -97,7 +97,7 @@ What the individual classes do is usually described in more detail in the classe
 
 ### Domain Layer
 
-#### <ins>1. entities using [equatable](https://pub.dev/packages/equatable)</ins>
+#### 1.<ins>entities using [equatable](https://pub.dev/packages/equatable)</ins>
 
 #### Why do we need `equatable` in Flutter?
 
@@ -122,7 +122,7 @@ The `equatable` package is an essential tool in Flutter that simplifies object e
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### <ins>2. repositories using [dartz](https://pub.dev/packages/dartz/versions)</ins>
+#### 2. <ins>repositories using [dartz](https://pub.dev/packages/dartz/versions)</ins>
 
 #### Why do we need `dartz` in Flutter?
 
@@ -147,7 +147,7 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### <ins>3. usecases </ins>
+#### 3. <ins>usecases</ins>
 
 Write a usecase for each functionality in a repository.
 
@@ -199,13 +199,13 @@ A **Use Case** is a class or function that represents a **specific task or actio
 
 ### Data Layer
 
-#### <ins>1. models extenting entities </ins>
+#### 1. <ins>models extenting entities using [freezed](https://pub.dev/packages/freezed)</ins>
 
 Create Models.
 
 Write test using json-files to mimic server.
 
-#### <ins>2. write test for models </ins>
+#### 2. <ins>write test for models </ins>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -275,6 +275,7 @@ Write test using json-files to mimic server.
 [![Flutter Bloc][flutter-bloc]][flutter-bloc-url]
 [![Flutter Localizations][flutter-localizations]][flutter-localizations-url]
 [![Flutter Secure Storage][flutter-secure-storage]][flutter-secure-storage-url]
+[![Freezed][freezed]][freezed-url]
 [![GetIt][get-it]][get-it-url]
 [![Hive][hive]][hive-url]
 [![Injectable][injectable]][injectable-url]
@@ -482,6 +483,8 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 [flutter-localizations-url]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 [flutter-secure-storage]: https://img.shields.io/badge/Flutter%20Secure%20Storage-2F4F4F.svg?style=for-the-badge&logo=lock&logoColor=white
 [flutter-secure-storage-url]: https://pub.dev/packages/flutter_secure_storage
+[freezed]: https://img.shields.io/badge/Freezed-0D47A1.svg?style=for-the-badge&logo=dart&logoColor=white
+[freezed-url]: https://pub.dev/packages/freezed
 [get-it]: https://img.shields.io/badge/GetIt-007ACC.svg?style=for-the-badge&logo=getit&logoColor=white
 [get-it-url]: https://pub.dev/packages/get_it
 [hive]: https://img.shields.io/badge/Hive-FFB300.svg?style=for-the-badge&logo=hive&logoColor=white
