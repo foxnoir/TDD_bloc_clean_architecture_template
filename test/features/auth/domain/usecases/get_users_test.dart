@@ -23,7 +23,7 @@ void main() {
   late GetUsers usecase;
   late AuthRepository repo;
 
-  final _tResponse = List<User>.empty();
+  final tResponse = List<User>.empty();
 
   setUp(() {
     /// Initialize dependencies
@@ -40,7 +40,7 @@ void main() {
       when(
         () => repo.getUsers(),
       ).thenAnswer(
-        (_) async => Right(_tResponse),
+        (_) async => Right(tResponse),
       );
 
       // Act
@@ -48,7 +48,7 @@ void main() {
 
       // Assert
       /// what we EXPECTED what it should be
-      expect(result, equals(Right<Failure, List<User>>(_tResponse)));
+      expect(result, equals(Right<Failure, List<User>>(tResponse)));
 
       /// verify if the function was called and was called only once
       verify(

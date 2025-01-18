@@ -9,6 +9,10 @@ import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repo
 /// talks to datasource
 /// gets result/exception returns result/failure
 /// implements methods
+///
+/// Repository handles the communication between the domain and
+/// data layers. It retrieves data from the remote data source, handles
+/// exceptions, and returns clean domain entities (User).
 
 class AuthRepoImpl implements AuthRepository {
   const AuthRepoImpl(this._remoteDataSource);
@@ -29,18 +33,16 @@ class AuthRepoImpl implements AuthRepository {
       );
       return const Right(null);
     } on ApiException catch (e) {
-      return Left(
-        ApiFailure(
-          message: e.message,
-          statusCode: e.statusCode,
-        ),
-      );
+      return Left<ApiFailure, List<User>>(ApiFailure.fromException(e));
     }
   }
 
   @override
-  ResultFuture<List<User>> getUsers() {
-    // TODO: implement getUsers
-    throw UnimplementedError();
+  ResultFuture<List<User>> getUsers() async {
+    try {
+      return Right(await _remoteDataSource.getUsers());
+    } on ApiException catch (e) {
+      return Left(ApiFailure.fromException(e));
+    }
   }
 }

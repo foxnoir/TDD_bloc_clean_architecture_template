@@ -4,6 +4,16 @@ import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
 part 'user_model.mapper.dart';
 
+/// Data model for the entity.
+///
+/// This class is a data transfer object (DTO) used to fetch and
+/// store user data from the remote data source. It implements the
+/// User interface to ensure compatibility with the domain layer.
+///
+/// Responsibilities:
+/// - Implements the domain's User interface.
+/// - Provides serialization and deserialization logic.
+
 @MappableClass()
 class UserModel extends Equatable with User, UserModelMappable {
   const UserModel({

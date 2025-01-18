@@ -1,6 +1,11 @@
 import 'package:equatable/equatable.dart';
 
-/// blueprint of data passed around layers in specific feature
+/// Core business entity that represents a User.
+///
+/// The User entity is independent of external libraries or APIs and
+/// is used to communicate across the domain and application layers.
+/// It defines the common attributes and behaviors of a user.
+
 mixin User on Equatable {
   String get id;
   String get name;

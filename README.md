@@ -469,8 +469,6 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 [auto-route]: https://img.shields.io/badge/Auto%20Route-00D09C.svg?style=for-the-badge&logo=autoroute&logoColor=white
 [auto-route-url]: https://pub.dev/packages/auto_route
 
-[auto-route]: https://img.shields.io/badge/Auto%20Route-00D09C.svg?style=for-the-badge&logo=autoroute&logoColor=white
-[auto-route-url]: https://pub.dev/packages/auto_route
 [bloc]: https://img.shields.io/badge/Bloc-8B0000.svg?style=for-the-badge&logo=bloc&logoColor=white
 [bloc-url]: https://pub.dev/packages/bloc
 [dart]: https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white

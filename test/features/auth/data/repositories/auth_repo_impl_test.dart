@@ -5,7 +5,9 @@ import 'package:tdd_clean_architecture/core/errors/exception_messages.dart';
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/features/auth/data/datasourcees/auth_remote_data_source.dart';
+import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/data/repositories/auth_repo_impl.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
 /// when returning void use Future.value() for testing
 
@@ -20,6 +22,11 @@ void main() {
     remoteDataSource = MockAuthRemoteDataSrc();
     repoImpl = AuthRepoImpl(remoteDataSource);
   });
+
+  final tException = ApiException(
+    message: ExceptionMessage.getMessage(ExceptionType.unknownError),
+    statusCode: 500,
+  );
 
   group('AUTH_REPO_IMPL createUser', () {
     const createdAt = 'whatever.createdAt';
@@ -62,7 +69,7 @@ void main() {
     );
 
     test(
-      'should return a [ServerFailure] when remote source call is unsuccessful',
+      'should return a [ApiFailure] when remote source call is unsuccessful',
       () async {
         //  arrange
         when(
@@ -71,12 +78,7 @@ void main() {
             name: any(named: 'name'),
             avatar: any(named: 'avatar'),
           ),
-        ).thenThrow(
-          ApiException(
-            message: ExceptionMessage.getMessage(ExceptionType.unknownError),
-            statusCode: 500,
-          ),
-        );
+        ).thenThrow(tException);
 
         ///  Act
         final result = await repoImpl.createUser(
@@ -89,12 +91,8 @@ void main() {
         expect(
           result,
           equals(
-            Left<Failure, dynamic>(
-              ApiFailure(
-                message:
-                    ExceptionMessage.getMessage(ExceptionType.unknownError),
-                statusCode: 500,
-              ),
+            Left<ApiFailure, void>(
+              ApiFailure.fromException(tException),
             ),
           ),
         );
@@ -106,6 +104,62 @@ void main() {
             name: name,
             avatar: avatar,
           ),
+        ).called(1);
+        verifyNoMoreInteractions(remoteDataSource);
+      },
+    );
+  });
+
+  group('AUTH_REPO_IMPL getUsers', () {
+    final tListUsers = List<UserModel>.empty();
+
+    test(
+      'should call the [AuthRemoteDataSource.getUsers] and '
+      'return a [List<User>] when remote source call is successful',
+      () async {
+        ///  Arrange
+        when(
+          () => remoteDataSource.getUsers(),
+        ).thenAnswer((_) async => tListUsers);
+
+        ///  Act
+        final result = await repoImpl.getUsers();
+
+        ///  Assert
+        expect(result, equals(Right<dynamic, List<User>>(tListUsers)));
+
+        /// check that remote source's getUsers gets called with right data
+        verify(
+          () => remoteDataSource.getUsers(),
+        ).called(1);
+        verifyNoMoreInteractions(remoteDataSource);
+      },
+    );
+
+    test(
+      'should return a [ApiFailure] when remote source call is unsuccessful',
+      () async {
+        ///  Arrange
+        when(
+          () => remoteDataSource.getUsers(),
+        ).thenThrow(tException);
+
+        ///  Act
+        final result = await repoImpl.getUsers();
+
+        ///  Assert
+        expect(
+          result,
+          equals(
+            Left<ApiFailure, List<User>>(
+              ApiFailure.fromException(tException),
+            ),
+          ),
+        );
+
+        /// check that remote source's getUsers gets called with right data
+        verify(
+          () => remoteDataSource.getUsers(),
         ).called(1);
         verifyNoMoreInteractions(remoteDataSource);
       },

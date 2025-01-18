@@ -20,6 +20,9 @@ abstract class Failure extends Equatable {
 /// local device
 class CacheFailure extends Failure {
   CacheFailure({required super.message, super.statusCode = 500});
+
+  CacheFailure.fromException(CacheException exception)
+      : this(message: exception.message, statusCode: exception.statusCode);
 }
 
 /// api calls
