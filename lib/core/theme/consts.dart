@@ -48,30 +48,22 @@ class AppFontWeight {
 class AppFontSize {
   const AppFontSize._();
 
-  /// details
   static const double s11 = 11;
-
-  /// bottom nav
   static const double s12 = 12;
-
-  /// error banner
   static const double s14 = 14;
-
-  /// button
   static const double s16 = 16;
-
-  /// hotels
   static const double s17 = 17;
-
-  /// prize  small devices
   static const double s18 = 18;
-
-  /// hotel count
   static const double s19 = 19;
-
-  /// hotel name
   static const double s21 = 21;
-
-  /// price
   static const double s23 = 22;
+
+  double scaleSize(BuildContext context, double size) {
+    /// Base screen width used in your design
+    /// use:
+    /// style: TextStyle(fontSize: scaleSize(context, 16)),
+    const baseWidth = 375.0;
+    final screenWidth = MediaQuery.of(context).size.width;
+    return size * (screenWidth / baseWidth);
+  }
 }

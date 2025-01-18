@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:tdd_clean_architecture/core/errors/exception_message.dart';
+import 'package:tdd_clean_architecture/core/errors/exception_messages.dart';
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/features/auth/data/datasourcees/auth_remote_data_source.dart';
@@ -61,54 +61,54 @@ void main() {
       },
     );
 
-    // test(
-    //   'should return a [ServerFailure] when remote source call is unsuccessful',
-    //   () async {
-    //     //  arrange
-    //     when(
-    //       () => remoteDataSource.createUser(
-    //         createdAt: any(named: 'createdAt'),
-    //         name: any(named: 'name'),
-    //         avatar: any(named: 'avatar'),
-    //       ),
-    //     ).thenThrow(
-    //       ApiException(
-    //         message: ExceptionMessage.getMessage(ExceptionType.unknownError),
-    //         statusCode: 500,
-    //       ),
-    //     );
+    test(
+      'should return a [ServerFailure] when remote source call is unsuccessful',
+      () async {
+        //  arrange
+        when(
+          () => remoteDataSource.createUser(
+            createdAt: any(named: 'createdAt'),
+            name: any(named: 'name'),
+            avatar: any(named: 'avatar'),
+          ),
+        ).thenThrow(
+          ApiException(
+            message: ExceptionMessage.getMessage(ExceptionType.unknownError),
+            statusCode: 500,
+          ),
+        );
 
-    //     ///  Act
-    //     final result = await repoImpl.createUser(
-    //       createdAt: createdAt,
-    //       name: name,
-    //       avatar: avatar,
-    //     );
+        ///  Act
+        final result = await repoImpl.createUser(
+          createdAt: createdAt,
+          name: name,
+          avatar: avatar,
+        );
 
-    //     ///  Assert
-    //     expect(
-    //       result,
-    //       equals(
-    //         Left<Failure, dynamic>(
-    //           ApiFailure(
-    //             message:
-    //                 ExceptionMessage.getMessage(ExceptionType.unknownError),
-    //             statusCode: 500,
-    //           ),
-    //         ),
-    //       ),
-    //     );
+        ///  Assert
+        expect(
+          result,
+          equals(
+            Left<Failure, dynamic>(
+              ApiFailure(
+                message:
+                    ExceptionMessage.getMessage(ExceptionType.unknownError),
+                statusCode: 500,
+              ),
+            ),
+          ),
+        );
 
-    //     /// check that remote source's createUser gets called with right data
-    //     verify(
-    //       () => remoteDataSource.createUser(
-    //         createdAt: createdAt,
-    //         name: name,
-    //         avatar: avatar,
-    //       ),
-    //     ).called(1);
-    //     verifyNoMoreInteractions(remoteDataSource);
-    //   },
-    // );
+        /// check that remote source's createUser gets called with right data
+        verify(
+          () => remoteDataSource.createUser(
+            createdAt: createdAt,
+            name: name,
+            avatar: avatar,
+          ),
+        ).called(1);
+        verifyNoMoreInteractions(remoteDataSource);
+      },
+    );
   });
 }
