@@ -101,7 +101,7 @@ What the individual classes do is usually described in more detail in the classe
 
 #### Why do we need `equatable` in Flutter?
 
-The `equatable` package is an essential tool in Flutter that simplifies object equality comparisons. It is particularly useful in scenarios such as state management and comparing data models. Here is a detailed explanation of why `equatable` is needed:
+The `equatable` package is an essential tool in Flutter that simplifies object equality comparisons. It is particularly useful in scenarios such as state management and comparing data models. While Dart allows overriding the == method and hashCode, this process can be verbose and error-prone. The `equatable` package provides a more straightforward and reliable alternative for handling equality.
 
 #### Benefits of `equatable`
 
@@ -134,7 +134,7 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
    The `Either` type is a powerful way to handle success (`Right`) and failure (`Left`) in a single object. It eliminates the need for throwing exceptions and simplifies error propagation.
 
 2. **Optional Values with `Option`**  
-   `Option` helps manage nullable data without relying on `null`, enforcing safer code by explicitly handling the absence of a value.
+   `Option` helps manage nullable data without relying on `null`, enforcing safer code by explicitly handling the absence of a value. While Dart's null safety provides static guarantees, `Option` makes nullable values explicit and avoids runtime null checks.“
 
 3. **Immutability Support**  
    Functional programming principles like immutability are easy to implement with `dartz`, helping you build predictable and bug-free code.
@@ -149,7 +149,7 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
 
 #### 3. <ins>usecases</ins>
 
-Write a usecase for each methos functionality in a repository.
+Write a usecase for each methods functionality in a repository.
 
 Write tests:
 
@@ -157,7 +157,7 @@ Write tests:
 - How can we create a fake version of the dependency?
 - How do we control what our dependencies do?
 
-Get tests past. (Implement usecase methos functionality.)
+Get tests past. (Implement usecase methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -208,11 +208,22 @@ Write test using json-files to mimic server.
 
 #### 2. <ins>Implement Repositories</ins>
 
-Create datasource interface, datasource impl. and implement repos. (no logic)
+Create datasource interface and implement repos. (no logic)
 
 Write tests.
 
-Get tests past. (Implement repo methos functionality.)
+Get tests past. (Implement repo methods functionality.)
+First Happy Cases, then try/catch (error handling).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+#### 3. <ins>Data Sources</ins>
+
+Implement datasource. (no logic)
+
+Write tests.
+
+Get tests past. (Implement datasource methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -284,6 +295,7 @@ First Happy Cases, then try/catch (error handling).
 [![Flutter Localizations][flutter-localizations]][flutter-localizations-url]
 [![Flutter Secure Storage][flutter-secure-storage]][flutter-secure-storage-url]
 [![GetIt][get-it]][get-it-url]
+[![HTTP][http]][http-url]
 [![Hive][hive]][hive-url]
 [![Injectable][injectable]][injectable-url]
 [![Intl][intl]][intl-url]
@@ -491,6 +503,8 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 [flutter-secure-storage-url]: https://pub.dev/packages/flutter_secure_storage
 [get-it]: https://img.shields.io/badge/GetIt-007ACC.svg?style=for-the-badge&logo=getit&logoColor=white
 [get-it-url]: https://pub.dev/packages/get_it
+[http]: https://img.shields.io/badge/HTTP-007BFF.svg?style=for-the-badge&logo=http&logoColor=white
+[http-url]: https://pub.dev/packages/http
 [hive]: https://img.shields.io/badge/Hive-FFB300.svg?style=for-the-badge&logo=hive&logoColor=white
 [hive-url]: https://pub.dev/packages/hive
 [injectable]: https://img.shields.io/badge/Injectable-009688.svg?style=for-the-badge&logo=injectable&logoColor=white
