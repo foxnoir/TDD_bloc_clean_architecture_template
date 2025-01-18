@@ -26,6 +26,7 @@ void main() {
   final _tResponse = List<User>.empty();
 
   setUp(() {
+    /// Initialize dependencies
     repo = MockAuthRepository();
     usecase = GetUsers(repo);
   });

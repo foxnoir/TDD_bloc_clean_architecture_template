@@ -7,7 +7,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user
 
 import '../../../../mocks.mock.dart';
 
-/// runs before each test
+/// setUp runs before each test
 ///
 /// thenThrow: Error Testing
 /// thenReturn: when function is not async (we don't need to wait)
@@ -16,7 +16,7 @@ import '../../../../mocks.mock.dart';
 /// dartz: Right() => Success, Left() => Failure
 /// right(null)) == void
 ///
-/// equals is always not necessary, often safer
+/// equals is not always necessary, but often safer
 
 void main() {
   late CreateUser usecase;
@@ -25,7 +25,7 @@ void main() {
   const params = CreateUserParams.empty();
 
   setUp(() {
-    /// Arrange: Setup the dependencies
+    /// Initialize dependencies
     repo = MockAuthRepository();
     usecase = CreateUser(repo);
   });
