@@ -203,9 +203,9 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - **Testability:** They are easy to isolate and test.
 - **Separation of Concerns:** By separating concerns, they make the code more maintainable.
 
-<div style="display: flex; justify-content: space-between;">
-  <p>(<a href="#testing-tips">More Testing Tips</a>)</p>
-  <p>(<a href="#readme-top">Back to Top</a>)</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span>(<a href="#readme-top">Back to Top</a>)</span>
 </div>
 
 ### Data Layer
@@ -225,9 +225,9 @@ Write tests.
 Get tests past. (Implement repo methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-<div style="display: flex; justify-content: space-between;">
-  <p>(<a href="#testing-tips">More Testing Tips</a>)</p>
-  <p>(<a href="#readme-top">Back to Top</a>)</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span>(<a href="#readme-top">Back to Top</a>)</span>
 </div>
 
 #### 3. <ins>Data Sources</ins>
@@ -239,9 +239,9 @@ Write tests.
 Get tests past. (Implement datasource methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-<div style="display: flex; justify-content: space-between;">
-  <p>(<a href="#testing-tips">More Testing Tips</a>)</p>
-  <p>(<a href="#readme-top">Back to Top</a>)</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span>(<a href="#readme-top">Back to Top</a>)</span>
 </div>
 
 ---
