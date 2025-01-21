@@ -5,7 +5,7 @@ import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
-import '../../../../../test_helpers/fixtures/fixture_reader.dart';
+import '../../../../../fixtures/fixture_reader.dart';
 
 void main() {
   final tModel = UserModel.empty();
@@ -82,7 +82,7 @@ void main() {
 
       // Assert
       expect(updatedModel.name, equals(updatedName));
-      expect(updatedModel.id, equals(tModel.id)); // Unchanged
+      expect(updatedModel.id, equals(tModel.id));
     });
   });
 }

@@ -5,6 +5,8 @@ import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/core/network/api_config.dart';
 import 'package:tdd_clean_architecture/features/auth/data_sources/auth_remote_data_source.dart';
 
+import '../../../test_helpers/test_response_messages.dart';
+
 class MockClient extends Mock implements http.Client {}
 
 void main() {
@@ -28,7 +30,7 @@ void main() {
             body: any(named: 'body'),
           ),
         ).thenAnswer(
-          (_) async => http.Response('User created successfully', 201),
+          (_) async => http.Response(TestResponseMessages.userCreated, 201),
         );
 
         /// Act
