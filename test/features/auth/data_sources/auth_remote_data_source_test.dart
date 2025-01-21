@@ -251,25 +251,20 @@ void main() {
       () async {
         /// Arrange
         when(
-          () => client.post(
+          () => client.get(
             any(),
-            body: any(named: 'body'),
-            headers: any(named: 'headers'),
+            headers: {'Content-Type': 'application/json'},
           ),
         ).thenThrow(
           Exception(TestResponseMessages.unexpectedError),
         );
 
         /// Act
-        final methodCall = remoteDataSource.createUser;
+        final methodCall = remoteDataSource.getUsers;
 
         /// Assert
         expect(
-          () => methodCall(
-            createdAt: 'test.createdAt',
-            name: 'test.name',
-            avatar: 'test.avatar',
-          ),
+          methodCall,
           throwsA(
             isA<ApiException>()
                 .having(
@@ -284,13 +279,8 @@ void main() {
 
         /// Verify
         verify(
-          () => client.post(
-            Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
-            body: jsonEncode({
-              'createdAt': 'test.createdAt',
-              'name': 'test.name',
-              'avatar': 'test.avatar',
-            }),
+          () => client.get(
+            any(),
             headers: {'Content-Type': 'application/json'},
           ),
         ).called(1);
