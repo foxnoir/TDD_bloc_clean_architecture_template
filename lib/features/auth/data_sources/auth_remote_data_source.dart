@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'package:tdd_clean_architecture/core/network/api_config.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 
 /// talks to server
@@ -18,12 +22,24 @@ abstract class AuthRemoteDataSource {
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
+  const AuthRemoteDataSourceImpl(this._client);
+  final http.Client _client;
+
   @override
   Future<void> createUser({
     required String createdAt,
     required String name,
     required String avatar,
-  }) async {}
+  }) async {
+    await _client.post(
+      Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
+      body: jsonEncode({
+        'createdAt': createdAt,
+        'name': name,
+        'avatar': avatar,
+      }),
+    );
+  }
 
   @override
   Future<List<UserModel>> getUsers() {

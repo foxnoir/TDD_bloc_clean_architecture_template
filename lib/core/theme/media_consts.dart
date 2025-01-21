@@ -1,13 +1,11 @@
 class AppSvgIcon {
   const AppSvgIcon._();
 
-  static const String account = 'assets/icons/account.svg';
+  static const String icon = 'assets/icons/icon.svg';
 }
 
 class AppImg {
   const AppImg._();
 
-  static const String learnJapanese = 'assets/img/learn_japanese.png';
-  static const String kanji = 'assets/img/kanji.png';
-  static const String grammar = 'assets/img/grammar.png';
+  static const String imgName = 'assets/img/img_name.png';
 }

@@ -24,10 +24,10 @@ class UserModel extends Equatable with User, UserModelMappable {
   });
 
   factory UserModel.empty() => const UserModel(
-        id: '_empty.id',
-        name: '_empty.name',
-        createdAt: '_empty.createdAt',
-        avatar: '_empty.avatar',
+        id: 'test.id',
+        name: 'test.name',
+        createdAt: 'test.createdAt',
+        avatar: 'test.avatar',
       );
 
   @override

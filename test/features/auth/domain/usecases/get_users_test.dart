@@ -6,7 +6,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
 
-import '../../../../mocks.mock.dart';
+import '../../../../test_helpers/mocks.mock.dart';
 
 /// runs before each test
 ///
@@ -20,8 +20,8 @@ import '../../../../mocks.mock.dart';
 /// equals is always not necessary, often safer
 
 void main() {
-  late GetUsers usecase;
   late AuthRepository repo;
+  late GetUsers usecase;
 
   final tResponse = List<User>.empty();
 

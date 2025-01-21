@@ -8,6 +8,7 @@ import 'package:tdd_clean_architecture/features/auth/data/datasourcees/auth_remo
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/data/repositories/auth_repo_impl.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
 
 /// when returning void use Future.value() for testing
 
@@ -15,7 +16,7 @@ class MockAuthRemoteDataSrc extends Mock implements AuthRemoteDataSource {}
 
 void main() {
   late AuthRemoteDataSource remoteDataSource;
-  late AuthRepoImpl repoImpl;
+  late AuthRepository repoImpl;
 
   setUp(() {
     /// Initialize dependencies

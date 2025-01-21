@@ -5,7 +5,7 @@ import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart';
 
-import '../../../../mocks.mock.dart';
+import '../../../../test_helpers/mocks.mock.dart';
 
 /// setUp runs before each test
 ///
@@ -19,8 +19,8 @@ import '../../../../mocks.mock.dart';
 /// equals is not always necessary, but often safer
 
 void main() {
-  late CreateUser usecase;
   late AuthRepository repo;
+  late CreateUser usecase;
 
   const params = CreateUserParams.empty();
 

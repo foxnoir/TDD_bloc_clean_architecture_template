@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class AppConst {
   const AppConst._();
 
-  static const double navIconSize = 25;
-  static const double acticveNavIconSize = 35;
-  static const double cardPadding = 16;
-  static const double cardIconSize = 15;
+  static const double kNavIconSize = 25;
+  static const double kActiveNavIconSize = 35;
+  static const double kCardPadding = 16;
+  static const double kCardIconSize = 15;
 }
 
 class AppColor {

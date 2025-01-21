@@ -219,7 +219,7 @@ First Happy Cases, then try/catch (error handling).
 
 #### 3. <ins>Data Sources</ins>
 
-Implement datasource. (no logic)
+Implement datasource and add api/server connection. (no logic)
 
 Write tests.
 
@@ -286,7 +286,6 @@ First Happy Cases, then try/catch (error handling).
 
 ### Most Important Packages and Tools used
 
-[![Auto Route][auto-route]][auto-route-url]
 [![Bloc][bloc]][bloc-url]
 [![Dartz][dartz]][dartz-url]
 [![Dio][dio]][dio-url]

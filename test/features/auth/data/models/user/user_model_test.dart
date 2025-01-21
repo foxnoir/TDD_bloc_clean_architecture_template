@@ -5,7 +5,7 @@ import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
-import '../../../../../fixtures/fixture_reader.dart';
+import '../../../../../test_helpers/fixtures/fixture_reader.dart';
 
 void main() {
   final tModel = UserModel.empty();
@@ -60,10 +60,10 @@ void main() {
     test('toJson should return a [JSON] with the right data', () {
       // Arrange
       final expected = jsonEncode({
-        'id': '_empty.id',
-        'name': '_empty.name',
-        'createdAt': '_empty.createdAt',
-        'avatar': '_empty.avatar',
+        'id': 'test.id',
+        'name': 'test.name',
+        'createdAt': 'test.createdAt',
+        'avatar': 'test.avatar',
       });
 
       // Act
