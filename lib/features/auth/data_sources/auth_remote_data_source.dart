@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/network/api_config.dart';
+import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 
 /// talks to server
@@ -59,8 +60,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<List<UserModel>> getUsers() {
-    // TODO: implement getUsers
-    throw UnimplementedError();
+  Future<List<UserModel>> getUsers() async {
+    final response = await _client.get(
+      Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
+    );
+
+    final decodedResponse = jsonDecode(response.body) as List<dynamic>;
+
+    return decodedResponse
+        .map((user) => UserModelMapper.fromMap(user as Map<String, dynamic>))
+        .toList();
   }
 }
