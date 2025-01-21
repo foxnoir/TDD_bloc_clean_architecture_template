@@ -203,24 +203,10 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - **Testability:** They are easy to isolate and test.
 - **Separation of Concerns:** By separating concerns, they make the code more maintainable.
 
-<div class="header-links">
-  <span class="left-link">(<a href="#testing-tips">More Testing Tips</a>)</span>
-  <span class="right-link">(<a href="#readme-top">Back to Top</a>)</span>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span>(<a href="#readme-top">Back to Top</a>)</span>
 </div>
-
-<style>
-  .header-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .left-link {
-    text-align: left;
-  }
-  .right-link {
-    text-align: right;
-  }
-</style>
 
 ### Data Layer
 
@@ -239,24 +225,10 @@ Write tests.
 Get tests past. (Implement repo methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-<div class="header-links">
-  <span class="left-link">(<a href="#testing-tips">More Testing Tips</a>)</span>
-  <span class="right-link">(<a href="#readme-top">Back to Top</a>)</span>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span>(<a href="#readme-top">Back to Top</a>)</span>
 </div>
-
-<style>
-  .header-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .left-link {
-    text-align: left;
-  }
-  .right-link {
-    text-align: right;
-  }
-</style>
 
 #### 3. <ins>Data Sources</ins>
 
@@ -267,24 +239,10 @@ Write tests.
 Get tests past. (Implement datasource methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-<div class="header-links">
-  <span class="left-link">(<a href="#testing-tips">More Testing Tips</a>)</span>
-  <span class="right-link">(<a href="#readme-top">Back to Top</a>)</span>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span>(<a href="#readme-top">Back to Top</a>)</span>
 </div>
-
-<style>
-  .header-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .left-link {
-    text-align: left;
-  }
-  .right-link {
-    text-align: right;
-  }
-</style>
 
 ---
 
