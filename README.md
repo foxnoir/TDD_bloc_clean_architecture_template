@@ -246,6 +246,18 @@ First Happy Cases, then try/catch (error handling).
 
 ---
 
+### Presentation Layer
+
+If you were to use 2 different status management solutions at the same time, you would have another folder `app` in here. Here we only work with [BloC](https://medium.com/flutter-community/flutter-bloc-for-beginners-839e22adb9f5).
+
+#### 1. <ins>State Managment here with: [BloC](https://pub.dev/packages/flutter_bloc)</ins>
+
+`Bloc`depends on `usecases`.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
 ## Style Guide
 
 ### Color Palette
@@ -607,12 +619,13 @@ expect(
 
 ## **Acknowledgments**
 
+- [BloC](https://medium.com/flutter-community/flutter-bloc-for-beginners-839e22adb9f5)
+- [clean architecture](https://dev.to/marwamejri/flutter-clean-architecture-1-an-overview-project-structure-4bhf)
+- [Dartz](https://medium.com/@samra.sajjad0001/exploring-the-purpose-and-usage-of-the-dartz-package-in-flutter-7902509939e9)
 - [Feature-first vs Layer-first Structure (Kody TechnoLab)](https://kodytechnolab.com/blog/layer-first-or-feature-first-flutter-project-structure/)
 - [Flutter Project Structure (Code with Andrea)](https://codewithandrea.com/articles/flutter-project-structure/)
-- [Dartz](https://medium.com/@samra.sajjad0001/exploring-the-purpose-and-usage-of-the-dartz-package-in-flutter-7902509939e9)
-- [TDD](https://www.browserstack.com/guide/tdd-in-flutter)
-- [clean architecture](https://dev.to/marwamejri/flutter-clean-architecture-1-an-overview-project-structure-4bhf)
 - [Mocktail](https://www.dbestech.com/tutorials/flutter-test-with-mocktail)
+- [TDD](https://www.browserstack.com/guide/tdd-in-flutter)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 [auto-route]: https://img.shields.io/badge/Auto%20Route-00D09C.svg?style=for-the-badge&logo=autoroute&logoColor=white
