@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/network/api_config.dart';
+import 'package:tdd_clean_architecture/features/auth/data/data_sources/auth_remote_data_source.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
-import 'package:tdd_clean_architecture/features/auth/data_sources/auth_remote_data_source.dart';
 
 import '../../../fixtures/fixture_reader.dart';
 import '../../../test_helpers/test_response_messages.dart';
@@ -241,7 +241,6 @@ void main() {
             headers: {'Content-Type': 'application/json'},
           ),
         ).called(1);
-
         verifyNoMoreInteractions(client);
       },
     );

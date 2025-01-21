@@ -4,7 +4,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/core/errors/exception_messages.dart';
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
-import 'package:tdd_clean_architecture/features/auth/data/datasourcees/auth_remote_data_source.dart';
+import 'package:tdd_clean_architecture/features/auth/data/data_sources/auth_remote_data_source.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/data/repositories/auth_repo_impl.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
