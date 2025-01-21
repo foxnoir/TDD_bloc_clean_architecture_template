@@ -63,12 +63,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<List<UserModel>> getUsers() async {
     final response = await _client.get(
       Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
+      headers: {'Content-Type': 'application/json'},
     );
 
-    final decodedResponse = jsonDecode(response.body) as List<dynamic>;
-
-    return decodedResponse
-        .map((user) => UserModelMapper.fromMap(user as Map<String, dynamic>))
+    return List<DataMap>.from(jsonDecode(response.body) as List)
+        .map(UserModelMapper.fromMap)
         .toList();
   }
 }

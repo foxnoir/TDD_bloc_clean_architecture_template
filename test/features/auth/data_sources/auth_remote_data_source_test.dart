@@ -177,7 +177,12 @@ void main() {
       'and status code is 200',
       () async {
         /// Arrange
-        when(() => client.get(any())).thenAnswer(
+        when(
+          () => client.get(
+            any(),
+            headers: {'Content-Type': 'application/json'},
+          ),
+        ).thenAnswer(
           (_) async => http.Response(jsonEncode(tJson), 200),
         );
 
@@ -190,10 +195,11 @@ void main() {
             .toList();
 
         /// Assert
-        expect(result, expectedResult);
+        expect(result, equals(expectedResult));
         verify(
           () => client.get(
             Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
+            headers: {'Content-Type': 'application/json'},
           ),
         ).called(1);
 
