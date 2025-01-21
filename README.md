@@ -204,6 +204,8 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - **Separation of Concerns:** By separating concerns, they make the code more maintainable.
 
 <p align="right">
+  (<a href="#testing-tips">More Testing Tips</a>) (<a href="#readme-top">Back to Top</a>)
+</p>
 
 ### Data Layer
 
@@ -222,7 +224,9 @@ Write tests.
 Get tests past. (Implement repo methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-(<a href="#testing-tips">More Testing Tips</a>) (<a href="#readme-top">Back to Top</a>)
+<p align="right">
+  (<a href="#testing-tips">More Testing Tips</a>) (<a href="#readme-top">Back to Top</a>)
+</p>
 
 #### 3. <ins>Data Sources</ins>
 
@@ -233,6 +237,8 @@ Write tests.
 Get tests past. (Implement datasource methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
+<p align="right">
+  (<a href="#testing-tips">More Testing Tips</a>) (<a href="#readme-top">Back to Top</a>)
 </p>
 
 ---
