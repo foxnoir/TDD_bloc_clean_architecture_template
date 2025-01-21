@@ -204,8 +204,8 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - **Separation of Concerns:** By separating concerns, they make the code more maintainable.
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
-  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
-  <span>(<a href="#readme-top">Back to Top</a>)</span>
+  <span style="text-align: left;">(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span style="text-align: right;">(<a href="#readme-top">Back to Top</a>)</span>
 </div>
 
 ### Data Layer
@@ -226,8 +226,8 @@ Get tests past. (Implement repo methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
-  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
-  <span>(<a href="#readme-top">Back to Top</a>)</span>
+  <span style="text-align: left;">(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span style="text-align: right;">(<a href="#readme-top">Back to Top</a>)</span>
 </div>
 
 #### 3. <ins>Data Sources</ins>
@@ -240,8 +240,8 @@ Get tests past. (Implement datasource methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
-  <span>(<a href="#testing-tips">More Testing Tips</a>)</span>
-  <span>(<a href="#readme-top">Back to Top</a>)</span>
+  <span style="text-align: left;">(<a href="#testing-tips">More Testing Tips</a>)</span>
+  <span style="text-align: right;">(<a href="#readme-top">Back to Top</a>)</span>
 </div>
 
 ---
