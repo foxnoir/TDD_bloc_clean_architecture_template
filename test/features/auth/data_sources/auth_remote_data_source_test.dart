@@ -208,46 +208,36 @@ void main() {
     );
 
     test(
-      'should throw [ApiException] when status code is NOT 200 or 201',
+      'should throw [ApiException] when status code is not 200',
       () async {
         /// Arrange
         when(
-          () => client.post(
+          () => client.get(
             any(),
-            body: any(named: 'body'),
-            headers: any(named: 'headers'),
+            headers: {'Content-Type': 'application/json'},
           ),
         ).thenAnswer(
-          (_) async => http.Response(TestResponseMessages.invalidEmail, 400),
+          (_) async =>
+              http.Response(TestResponseMessages.serverUnavailable, 500),
         );
 
         /// Act
-        final methodCall = remoteDataSource.createUser;
+        final methodCall = remoteDataSource.getUsers;
 
         /// Assert
         /// we want the higher ordered method to call the method
         expect(
-          () async => methodCall(
-            createdAt: 'test.createdAt',
-            name: 'test.name',
-            avatar: 'test.avatar',
-          ),
+          () async => methodCall(),
           throwsA(
             const ApiException(
-              message: TestResponseMessages.invalidEmail,
-              statusCode: 400,
+              message: TestResponseMessages.serverUnavailable,
+              statusCode: 500,
             ),
           ),
         );
-
         verify(
-          () => client.post(
+          () => client.get(
             Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
-            body: jsonEncode({
-              'createdAt': 'test.createdAt',
-              'name': 'test.name',
-              'avatar': 'test.avatar',
-            }),
             headers: {'Content-Type': 'application/json'},
           ),
         ).called(1);
