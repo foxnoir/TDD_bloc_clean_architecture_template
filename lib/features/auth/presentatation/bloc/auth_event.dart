@@ -1,5 +1,10 @@
 part of 'auth_bloc.dart';
 
+/// BLoC Event Classes
+///
+/// Uses `sealed` to ensure all event subclasses are within the same file,
+/// enhancing clarity and ensuring no external extension of events.
+
 sealed class AuthEvent extends Equatable {
   const AuthEvent();
 

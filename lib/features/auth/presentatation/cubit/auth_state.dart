@@ -1,11 +1,4 @@
-part of 'auth_bloc.dart';
-
-/// BLoC State Classes
-///
-/// Defines the possible states for the BLoC using a sealed class hierarchy.
-/// Sealed classes ensure type safety by limiting states to predefined options.
-/// Each state represents a specific application state
-/// (e.g., loading, success, error).
+part of 'auth_cubit.dart';
 
 sealed class AuthState extends Equatable {
   const AuthState();
