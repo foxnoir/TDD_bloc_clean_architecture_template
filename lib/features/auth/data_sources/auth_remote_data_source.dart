@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/network/api_config.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 
@@ -31,14 +32,30 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required String name,
     required String avatar,
   }) async {
-    await _client.post(
-      Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
-      body: jsonEncode({
-        'createdAt': createdAt,
-        'name': name,
-        'avatar': avatar,
-      }),
-    );
+    try {
+      final response = await _client.post(
+        Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
+        body: jsonEncode({
+          'createdAt': createdAt,
+          'name': name,
+          'avatar': avatar,
+        }),
+        headers: {'Content-Type': 'application/json'},
+      );
+      if (response.statusCode != 200 && response.statusCode != 201) {
+        throw ApiException(
+          message: response.body,
+          statusCode: response.statusCode,
+        );
+      }
+    } on ApiException {
+      rethrow;
+    } catch (e) {
+      /// is triggered if an unexpected error occurs (NO!!! APiExpetion, could be internal / dart / error etc),
+      /// this error is replaced by an ApiException
+      /// statusCode 505 then indicates an unexpected error
+      throw ApiException(message: e.toString(), statusCode: 505);
+    }
   }
 
   @override

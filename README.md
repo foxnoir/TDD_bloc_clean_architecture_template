@@ -35,6 +35,7 @@
       <ul>
         <li><a href="#data-layer">Data Layer</a></li>
       </ul>
+    </li>
     <li>
       <a href="#style-guide">Style Guide</a>
       <ul>
@@ -84,6 +85,12 @@
     <li><a href="#packages-and-reasons-for-use">Packages and Reasons for Use</a></li>
     <li><a href="#test-coverage">Test Coverage</a></li>
     <li><a href="#changelog">Changelog</a></li>
+    <li>
+      <a href="#testing-tips">Testing Tips</a>
+      <ul>
+        <li><a href="#testing-futurevoid-methods-in-dartflutter">Testing Future<void> Methods in Dart/Flutter</a></li>
+     </ul>
+    </li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -196,7 +203,10 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - **Testability:** They are easy to isolate and test.
 - **Separation of Concerns:** By separating concerns, they make the code more maintainable.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<div style="display: flex; justify-content: space-between;">
+  <p>(<a href="#testing-tips">More Testing Tips</a>)</p>
+  <p>(<a href="#readme-top">Back to Top</a>)</p>
+</div>
 
 ### Data Layer
 
@@ -215,7 +225,10 @@ Write tests.
 Get tests past. (Implement repo methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<div style="display: flex; justify-content: space-between;">
+  <p>(<a href="#testing-tips">More Testing Tips</a>)</p>
+  <p>(<a href="#readme-top">Back to Top</a>)</p>
+</div>
 
 #### 3. <ins>Data Sources</ins>
 
@@ -226,7 +239,10 @@ Write tests.
 Get tests past. (Implement datasource methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<div style="display: flex; justify-content: space-between;">
+  <p>(<a href="#testing-tips">More Testing Tips</a>)</p>
+  <p>(<a href="#readme-top">Back to Top</a>)</p>
+</div>
 
 ---
 
@@ -313,25 +329,35 @@ First Happy Cases, then try/catch (error handling).
 - Download or clone this repo by using the link or the SSH URL below:
 
 ```
+
 https://github.com/foxnoir/TTD_clean_architecture_template.git
+
 ```
 
 ```
+
 git@github.com:foxnoir/TTD_clean_architecture_template.git
+
 ```
 
 - Go to project root and execute the following command in console to get the required dependencies:
 
 ```
+
 flutter pub get
+
 ```
 
 ```
+
 flutter packages pub run build_runner build --delete-conflicting-outputs
+
 ```
 
 ```
+
 flutter run
+
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -341,7 +367,9 @@ flutter run
 > :warning: **(Normally, this should not need to be executed.)**
 
 ```
+
 flutter pub run flutter_launcher_icons:main
+
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -349,7 +377,9 @@ flutter pub run flutter_launcher_icons:main
 ### Generate Splash Screen
 
 ```
+
 flutter pub run flutter_native_splash:create
+
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -357,46 +387,48 @@ flutter pub run flutter_native_splash:create
 ## **App Architecture and Folder Structure**
 
 ```
+
 flutter-app/
-  ├── android
-  ├── assets/
-  │     ├── fonts/
-  │     ├── icons/
-  │     └── img/
-  ├── build/
-  ├── images/
-  ├── ios/
-  ├── lib/
-  │     ├── core/
-  │     │     ├── di/
-  │     │     ├── errors/
-  │     │     ├── localization/
-  │     │     ├── log/
-  │     │     ├── router/
-  │     │     ├── theme/
-  │     │     ├── usecases/
-  │     │     └── utils/
-  │     ├── features/
-  │     │     └── feature/
-  │     │          ├── data/
-  │     │          │     ├── models/
-  │     │          │     ├── repositories/
-  │     │          │     └── data_sources/
-  │     │          ├── domain/
-  │     │          │     ├── entities/
-  │     │          │     ├── repositories/
-  │     │          │     └── usecases/
-  │     │          └── presentation/
-  │     │                ├── views/
-  │     │                ├── widgets/
-  │     │                └── bloc/
-  │     │     └── navigation/
-  │     │     └── storage/
-  │     └── global_widgets
-  │     └── main.dart
-  ├── test/
-  ├── web/
-  └── pubspec.yaml
+├── android
+├── assets/
+│ ├── fonts/
+│ ├── icons/
+│ └── img/
+├── build/
+├── images/
+├── ios/
+├── lib/
+│ ├── core/
+│ │ ├── di/
+│ │ ├── errors/
+│ │ ├── localization/
+│ │ ├── log/
+│ │ ├── router/
+│ │ ├── theme/
+│ │ ├── usecases/
+│ │ └── utils/
+│ ├── features/
+│ │ └── feature/
+│ │ ├── data/
+│ │ │ ├── models/
+│ │ │ ├── repositories/
+│ │ │ └── data_sources/
+│ │ ├── domain/
+│ │ │ ├── entities/
+│ │ │ ├── repositories/
+│ │ │ └── usecases/
+│ │ └── presentation/
+│ │ ├── views/
+│ │ ├── widgets/
+│ │ └── bloc/
+│ │ └── navigation/
+│ │ └── storage/
+│ └── global_widgets
+│ └── main.dart
+├── test/
+├── web/
+└── pubspec.yaml
+
 ```
 
 ### **Feature-First Approach**
@@ -467,6 +499,112 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 
 ---
 
+## Testing Tips
+
+## Testing `Future<void>` Methods in Dart/Flutter
+
+When testing `Future<void>` methods, there are two common approaches:
+
+### Variant 1: Directly Call the Method and Assert Completion
+
+```dart
+final methodCall = remoteDataSource.createUser(
+  createdAt: 'test.createdAt',
+  name: 'test.name',
+  avatar: 'test.avatar',
+);
+
+expect(methodCall, completes);
+```
+
+- **When to Use:**
+  - This variant is simple and works for methods that:
+    - Perform an asynchronous operation without throwing exceptions.
+    - Are expected to complete without returning a value.
+- **Limitation:**
+  - This approach does not allow testing for exceptions or validating thrown errors.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Variant 2: Use a Function Reference and Assert Behavior
+
+```dart
+final methodCall = remoteDataSource.createUser;
+
+// To test successful completion
+expect(
+  () => methodCall(
+    name: 'test.name',
+    createdAt: 'test.createdAt',
+    avatar: 'test.avatar',
+  ),
+  completes,
+);
+
+// To test error handling
+expect(
+  () => methodCall(
+    name: 'test.name',
+    createdAt: 'test.createdAt',
+    avatar: 'test.avatar',
+  ),
+  throwsA(isA<APIException>()),
+);
+```
+
+- **When to Use:**
+  - This variant provides flexibility to:
+    - Test if the method completes successfully (`completes`).
+    - Test if the method throws a specific exception (`throwsA`).
+    - Separate method setup and invocation, which improves readability in tests with complex assertions.
+- **Why prefer this variant for `Future<void>` methods?**
+  - When testing `Future<void>`, we often need to check:
+    - That the method completes successfully without exceptions.
+    - That the correct exceptions are thrown under specific conditions.
+  - This variant enables this by using a function reference, allowing the test framework to monitor the function execution.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Comparison
+
+| Variant       | Use Case                                         | Limitation                  |
+| ------------- | ------------------------------------------------ | --------------------------- |
+| **Variant 1** | Simple tests with no exceptions expected         | Cannot test for exceptions  |
+| **Variant 2** | Tests requiring exception handling or validation | Slightly more verbose setup |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Testing Method Completion
+
+```dart
+final methodCall = remoteDataSource.createUser;
+expect(
+  () => methodCall(
+    name: 'test.name',
+    createdAt: 'test.createdAt',
+    avatar: 'test.avatar',
+  ),
+  completes,
+);
+```
+
+### Testing Exception Handling
+
+```dart
+expect(
+  () => methodCall(
+    name: 'test.name',
+    createdAt: 'test.createdAt',
+    avatar: 'test.avatar',
+  ),
+  throwsA(isA<APIException>()),
+);
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
 ## **Acknowledgments**
 
 - [Feature-first vs Layer-first Structure (Kody TechnoLab)](https://kodytechnolab.com/blog/layer-first-or-feature-first-flutter-project-structure/)
@@ -526,3 +664,7 @@ View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_
 [twitter-url]: https://twitter.com/_foxnoir_?lang=de
 [very-good]: https://img.shields.io/badge/Very%20Good%20Analysis-B22C89.svg?style=for-the-badge&logo=verygood&logoColor=white
 [very-good-url]: https://pub.dev/packages/very_good_analysis
+
+```
+
+```
