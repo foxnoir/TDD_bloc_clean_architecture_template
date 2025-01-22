@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tdd_clean_architecture/core/localization/localization_extensions.dart';
 
 class PageNotFound extends StatelessWidget {
   const PageNotFound({super.key});
@@ -8,7 +10,7 @@ class PageNotFound extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('com,ming '),
+        title: Text(AppLocalizations.of(context).pageNotFound),
       ),
       body: const Placeholder(),
     );

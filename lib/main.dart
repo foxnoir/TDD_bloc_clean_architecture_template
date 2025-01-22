@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:injectable/injectable.dart';
 import 'package:tdd_clean_architecture/core/di/di.dart';
 import 'package:tdd_clean_architecture/core/log/logger.dart';
+import 'package:tdd_clean_architecture/core/router/app_router.dart';
+import 'package:tdd_clean_architecture/core/theme/theme.dart';
 
 Future<void> main() async {
   await runZonedGuarded(() async {
@@ -32,25 +35,18 @@ class TemplateApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('TDD and clean architecture'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              'hello there',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
+    final _appRouter = AppRouter(isTesting: false);
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routeInformationParser: _appRouter.router.routeInformationParser,
+      routeInformationProvider: _appRouter.router.routeInformationProvider,
+      routerDelegate: _appRouter.router.routerDelegate,
+      localizationsDelegates: const [
+        ...AppLocalizations.localizationsDelegates,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      // locale: DI.getIt<SettingsRepository>().locale,
+      theme: getLightTheme(),
     );
   }
 }

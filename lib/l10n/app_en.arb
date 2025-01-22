@@ -1,6 +1,7 @@
 {
   "@@locale": "en",
-  "fetching_users": "Fetching Users",
-  "creating_user": "Creating User",
-  "add_user": "Add User"
+  "fetching_users": "Fetching users",
+  "creating_user": "Creating user",
+  "add_user": "Add user",
+  "page_not_found": "Page not found"
 }
