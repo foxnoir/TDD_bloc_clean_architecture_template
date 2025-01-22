@@ -35,12 +35,11 @@ class TemplateApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _appRouter = AppRouter(isTesting: false);
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routeInformationParser: _appRouter.router.routeInformationParser,
-      routeInformationProvider: _appRouter.router.routeInformationProvider,
-      routerDelegate: _appRouter.router.routerDelegate,
+      routeInformationParser: appRouter.routeInformationParser,
+      routeInformationProvider: appRouter.routeInformationProvider,
+      routerDelegate: appRouter.routerDelegate,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: const Locale('en'),

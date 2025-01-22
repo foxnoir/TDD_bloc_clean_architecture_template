@@ -52,7 +52,7 @@ void main() {
       ),
     ];
 
-    testWidgets('displays AppLoadingColumn when state is GettingUsers',
+    testWidgets('displays [AppLoadingColumn] when state is [GettingUsers]',
         (tester) async {
       // Arrange
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
@@ -70,7 +70,7 @@ void main() {
       );
     });
 
-    testWidgets('displays AppLoadingColumn when state is CreatingUser',
+    testWidgets('displays [AppLoadingColumn] when state is [CreatingUser]',
         (tester) async {
       // Arrange
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
@@ -85,7 +85,8 @@ void main() {
       expect(find.textContaining(FallbackStrings.creatingUser), findsOneWidget);
     });
 
-    testWidgets('displays user list when state is UsersLoaded', (tester) async {
+    testWidgets('displays [UserList] when state is [UsersLoaded]',
+        (tester) async {
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
       when(() => mockAuthCubit.state).thenReturn(UsersLoaded(tListUsers));
 
@@ -100,7 +101,8 @@ void main() {
       expect(find.byType(Image), findsNWidgets(tListUsers.length));
     });
 
-    testWidgets('displays error icon if avatar fails to load', (tester) async {
+    testWidgets('displays [ErrorIcon] when avatar fails to load',
+        (tester) async {
       // Arrange
       final errorAvatarListUsers = [
         UserModel.empty().copyWith(
@@ -122,8 +124,9 @@ void main() {
       expect(find.byIcon(Icons.error), findsOneWidget);
     });
 
-    testWidgets('displays AddUserDialog when FloatingActionButton is pressed',
-        (tester) async {
+    testWidgets(
+        'displays [AddUserDialog] when '
+        '[FloatingActionButton] is pressed', (tester) async {
       // Arrange
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
       when(() => mockAuthCubit.state).thenReturn(const GettingUsers());
@@ -137,7 +140,7 @@ void main() {
       expect(find.byType(AddUserDialog), findsOneWidget);
     });
 
-    testWidgets('shows SnackBar when state is AuthError', (tester) async {
+    testWidgets('shows [SnackBar] when state is [AuthError]', (tester) async {
       // Arrange
       const errorMessage = 'Error occurred';
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});

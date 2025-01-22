@@ -9,14 +9,20 @@ import 'package:tdd_clean_architecture/features/auth/presentation/widgets/auth_u
 import 'package:tdd_clean_architecture/global_widgets/app_loading_column.dart';
 
 class AuthScreen extends StatelessWidget {
-  const AuthScreen({super.key});
+  const AuthScreen({
+    required this.isTesting,
+    super.key,
+  });
+  final bool isTesting;
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DI.getIt<AuthCubit>(),
-      child: const AuthView(),
-    );
+    return isTesting
+        ? Container()
+        : BlocProvider(
+            create: (context) => DI.getIt<AuthCubit>(),
+            child: const AuthView(),
+          );
   }
 }
 
