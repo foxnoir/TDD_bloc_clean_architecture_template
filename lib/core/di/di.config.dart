@@ -49,6 +49,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i862.AuthRemoteDataSourceImpl(gh<_i519.Client>()));
     gh.lazySingleton<_i79.AuthRepository>(
         () => _i807.AuthRepoImpl(gh<_i862.AuthRemoteDataSource>()));
+    gh.factory<_i527.GetUsers>(() => _i527.GetUsers(gh<_i79.AuthRepository>()));
     gh.factory<_i791.CreateUser>(
         () => _i791.CreateUser(gh<_i79.AuthRepository>()));
     gh.factory<_i193.AuthCubit>(() => _i193.AuthCubit(

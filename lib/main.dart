@@ -41,11 +41,9 @@ class TemplateApp extends StatelessWidget {
       routeInformationParser: _appRouter.router.routeInformationParser,
       routeInformationProvider: _appRouter.router.routeInformationProvider,
       routerDelegate: _appRouter.router.routerDelegate,
-      localizationsDelegates: const [
-        ...AppLocalizations.localizationsDelegates,
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      // locale: DI.getIt<SettingsRepository>().locale,
+      locale: const Locale('en'),
       theme: getLightTheme(),
     );
   }

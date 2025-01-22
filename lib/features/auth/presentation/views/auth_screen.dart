@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tdd_clean_architecture/core/di/di.dart';
 import 'package:tdd_clean_architecture/core/localization/localization_extensions.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/widgets/add_user_dialog.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/widgets/loading_column.dart';
 
-class AuthScreen extends StatefulWidget {
+class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
 
   @override
-  State<AuthScreen> createState() => _AuthScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => DI.getIt<AuthCubit>(),
+      child: const AuthView(),
+    );
+  }
 }
 
-class _AuthScreenState extends State<AuthScreen> {
+class AuthView extends StatefulWidget {
+  const AuthView({super.key});
+
+  @override
+  State<AuthView> createState() => _AuthViewState();
+}
+
+class _AuthViewState extends State<AuthView> {
   final TextEditingController nameController = TextEditingController();
 
   void getUsers() {
