@@ -35,7 +35,7 @@ class AuthCubit extends Cubit<AuthState> {
     );
 
     result.fold(
-      (failure) => emit(AuthError(failure.message)),
+      (failure) => emit(AuthError(failure.errorMessage)),
       (_) => emit(const UserCreated()),
     );
   }

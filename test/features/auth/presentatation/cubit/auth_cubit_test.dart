@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
 import 'package:tdd_clean_architecture/features/auth/presentatation/cubit/auth_cubit.dart';
@@ -27,6 +28,7 @@ void main() {
   late AuthCubit cubit;
 
   const tCreateUserParams = CreateUserParams.empty();
+  final tApiFailure = ApiFailure(message: 'message', statusCode: 400);
 
   setUp(() {
     /// Initialize dependencies
@@ -43,7 +45,8 @@ void main() {
     expect(cubit.state, const AuthInitial());
   });
 
-  group('AuthCubit create User', () {
+  group('AuthCubit createUser', () {
+    /// successful test
     blocTest<AuthCubit, AuthState>(
       'should emit [CreatingUser, UserCreated] when successful',
       build: () {
@@ -62,6 +65,32 @@ void main() {
       expect: () => const [
         CreatingUser(),
         UserCreated(),
+      ],
+      verify: (_) {
+        verify(() => createUser(params: tCreateUserParams)).called(1);
+        verifyNoMoreInteractions(createUser);
+      },
+    );
+
+    /// error
+    blocTest<AuthCubit, AuthState>(
+      'should emit [CreatingUser, AuthError] when unsuccessful',
+      build: () {
+        when(() => createUser(params: any(named: 'params'))).thenAnswer(
+          (_) async => Left(tApiFailure),
+        );
+        return cubit;
+      },
+      act: (cubit) => cubit.createUser(
+        createdAt: tCreateUserParams.createdAt,
+        name: tCreateUserParams.name,
+        avatar: tCreateUserParams.avatar,
+      ),
+
+      /// list of states we expecting to emit
+      expect: () => [
+        const CreatingUser(),
+        AuthError(tApiFailure.errorMessage),
       ],
       verify: (_) {
         verify(() => createUser(params: tCreateUserParams)).called(1);
