@@ -1,4 +1,6 @@
 {
   "@@locale": "en",
-  "hello": "Hello"
+  "fetching_users": "Fetching Users",
+  "creating_user": "Creating User",
+  "add_user": "Add User"
 }

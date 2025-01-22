@@ -7,7 +7,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 
 import '../../../../../fixtures/fixture_reader.dart';
 
-void main() {
+Future<void> main() async {
   final tModel = UserModel.empty();
   final tJson = fixture('user.json');
   final tMap = jsonDecode(tJson) as DataMap;

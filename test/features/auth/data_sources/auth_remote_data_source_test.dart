@@ -12,7 +12,7 @@ import '../../../test_helpers/test_response_messages.dart';
 
 class MockClient extends Mock implements http.Client {}
 
-void main() {
+Future<void> main() async {
   late MockClient client;
   late AuthRemoteDataSource remoteDataSource;
 

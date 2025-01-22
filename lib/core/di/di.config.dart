@@ -24,8 +24,8 @@ import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user
     as _i791;
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart'
     as _i527;
-import 'package:tdd_clean_architecture/features/auth/presentatation/cubit/auth_cubit.dart'
-    as _i939;
+import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart'
+    as _i193;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -49,10 +49,9 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i862.AuthRemoteDataSourceImpl(gh<_i519.Client>()));
     gh.lazySingleton<_i79.AuthRepository>(
         () => _i807.AuthRepoImpl(gh<_i862.AuthRemoteDataSource>()));
-    gh.factory<_i527.GetUsers>(() => _i527.GetUsers(gh<_i79.AuthRepository>()));
     gh.factory<_i791.CreateUser>(
         () => _i791.CreateUser(gh<_i79.AuthRepository>()));
-    gh.factory<_i939.AuthCubit>(() => _i939.AuthCubit(
+    gh.factory<_i193.AuthCubit>(() => _i193.AuthCubit(
           createUser: gh<_i791.CreateUser>(),
           getUsers: gh<_i527.GetUsers>(),
         ));

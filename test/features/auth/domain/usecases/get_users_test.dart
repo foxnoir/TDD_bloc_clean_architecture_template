@@ -8,7 +8,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.d
 
 import '../../../../test_helpers/mocks.mock.dart';
 
-/// runs before each test
+/// setUp runs before each test
 ///
 /// thenThrow: Error Testing
 /// thenReturn: when function is not async (we don't need to wait)
@@ -19,7 +19,7 @@ import '../../../../test_helpers/mocks.mock.dart';
 ///
 /// equals is always not necessary, often safer
 
-void main() {
+Future<void> main() async {
   late AuthRepository repo;
   late GetUsers usecase;
 

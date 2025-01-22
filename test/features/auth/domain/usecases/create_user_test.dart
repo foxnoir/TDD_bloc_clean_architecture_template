@@ -18,7 +18,7 @@ import '../../../../test_helpers/mocks.mock.dart';
 ///
 /// equals is not always necessary, but often safer
 
-void main() {
+Future<void> main() async {
   late AuthRepository repo;
   late CreateUser usecase;
 

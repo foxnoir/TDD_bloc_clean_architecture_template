@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
-import 'package:tdd_clean_architecture/features/auth/presentatation/cubit/auth_cubit.dart';
+import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
 
 import '../../../../test_helpers/mocks.mock.dart';
 
@@ -22,7 +22,7 @@ import '../../../../test_helpers/mocks.mock.dart';
 ///
 /// use Right<dynamic>, if right side doesn't matter for test
 
-void main() {
+Future<void> main() async {
   late CreateUser createUser;
   late GetUsers getUsers;
   late AuthCubit cubit;

@@ -14,7 +14,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repo
 
 class MockAuthRemoteDataSrc extends Mock implements AuthRemoteDataSource {}
 
-void main() {
+Future<void> main() async {
   late AuthRemoteDataSource remoteDataSource;
   late AuthRepository repoImpl;
 

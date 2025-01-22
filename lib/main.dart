@@ -17,7 +17,6 @@ Future<void> main() async {
 Future<void> _loadApp() async {
   try {
     await DI.getIt.reset();
-    DI.getIt.registerSingleton<bool>(false);
     await configureInjection(Environment.dev);
     runApp(TemplateApp());
   } catch (ex, st) {

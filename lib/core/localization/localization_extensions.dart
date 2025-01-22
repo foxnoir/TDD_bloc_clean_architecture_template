@@ -1,19 +1,17 @@
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class FallbackLocalizations {
-  factory FallbackLocalizations() {
-    return _instance;
-  }
-
-  FallbackLocalizations._internal();
-  static final FallbackLocalizations _instance =
-      FallbackLocalizations._internal();
-
-  String get hello => 'Hello';
+/// Default fallback strings
+class FallbackStrings {
+  static const fetchingUsers = 'Fetching users';
+  static const creatingUser = 'Creating user';
+  static const addUser = 'Add User';
 }
 
+/// Extension on AppLocalizations to provide fallback strings
 extension AppLocalizationsWithFallback on AppLocalizations? {
-  FallbackLocalizations get fallback => FallbackLocalizations();
+  String get fetchingUsers => FallbackStrings.fetchingUsers;
 
-  String get hello => this?.hello ?? fallback.hello;
+  String get creatingUser => FallbackStrings.creatingUser;
+
+  String get addUser => FallbackStrings.addUser;
 }
