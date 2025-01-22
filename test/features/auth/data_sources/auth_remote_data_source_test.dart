@@ -14,7 +14,7 @@ class MockClient extends Mock implements http.Client {}
 
 void main() {
   late MockClient client;
-  late AuthRemoteDataSourceImpl remoteDataSource;
+  late AuthRemoteDataSource remoteDataSource;
 
   setUp(() {
     client = MockClient();

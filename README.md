@@ -127,7 +127,7 @@ The `equatable` package is an essential tool in Flutter that simplifies object e
 5. **Supports Better Testing**  
    When writing unit tests, `equatable` allows you to compare objects directly without implementing custom equality logic.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 #### 2. <ins>repositories using [dartz](https://pub.dev/packages/dartz/versions)</ins>
 
@@ -152,7 +152,7 @@ The `dartz` package brings **functional programming concepts** to Dart, allowing
 5. **Cleaner Code and Better Testing**  
    By using `dartz`, your code becomes more declarative and testable, as error paths and nullable values are explicitly defined.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 #### 3. <ins>usecases</ins>
 
@@ -167,7 +167,7 @@ Write tests:
 Get tests past. (Implement usecase methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 #### Why Are Use Cases Important in Clean Architecture?
 
@@ -183,7 +183,7 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - Fetching a list of items.
 - Submitting a form.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 #### Responsibilities of Use Cases
 
@@ -204,7 +204,7 @@ A **Use Case** is a class or function that represents a **specific task or actio
 - **Separation of Concerns:** By separating concerns, they make the code more maintainable.
 
 <p align="right">
-  (<a href="#testing-tips">More Testing Tips</a>) (<a href="#readme-top">Back to Top</a>)
+  <a href="#testing-tips">More Testing Tips</a> <a href="#readme-top">Back to Top</a>
 </p>
 
 ### Data Layer
@@ -225,7 +225,7 @@ Get tests past. (Implement repo methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
 <p align="right">
-  (<a href="#testing-tips">More Testing Tips</a>) (<a href="#readme-top">Back to Top</a>)
+  <a href="#testing-tips">More Testing Tips</a> <a href="#readme-top">Back to Top</a>
 </p>
 
 #### 3. <ins>Data Sources</ins>
@@ -238,7 +238,7 @@ Get tests past. (Implement datasource methods functionality.)
 First Happy Cases, then try/catch (error handling).
 
 <p align="right">
-  (<a href="#testing-tips">More Testing Tips</a>) (<a href="#readme-top">Back to Top</a>)
+  <a href="#testing-tips">More Testing Tips</a> <a href="#readme-top">Back to Top</a>
 </p>
 
 ---
@@ -251,7 +251,10 @@ If you were to use 2 different status management solutions at the same time, you
 
 `Bloc`depends on `usecases`.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Implement bloc_files.
+Write test for bloc_files.
+
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -261,19 +264,19 @@ If you were to use 2 different status management solutions at the same time, you
 
 [Image comming soon]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Fonts
 
 [Fonts comming soon]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Icons
 
 - [Default Flutter materials icons](https://api.flutter.dev/flutter/material/Icons-class.html)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Final Layout
 
@@ -281,7 +284,7 @@ If you were to use 2 different status management solutions at the same time, you
 
 [Image comming soon]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -291,13 +294,13 @@ If you were to use 2 different status management solutions at the same time, you
 
 [Video comming soon]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### **Error Handling**
 
 [Video comming soon]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -327,7 +330,7 @@ If you were to use 2 different status management solutions at the same time, you
 [![Mocktail][mocktail]][mocktail-url]
 [![Very Good Analysis][very-good]][very-good-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -369,7 +372,7 @@ flutter run
 
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Generate Launcher Icon
 
@@ -381,7 +384,7 @@ flutter pub run flutter_launcher_icons:main
 
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Generate Splash Screen
 
@@ -391,7 +394,7 @@ flutter pub run flutter_native_splash:create
 
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ## **App Architecture and Folder Structure**
 
@@ -472,7 +475,7 @@ The `features/` folder structure groups code by **feature domains**, enabling be
 
 Contains **reusable widgets** that can be used across multiple screens.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ## **Packages and Reasons for Use**
 
@@ -488,7 +491,7 @@ Contains **reusable widgets** that can be used across multiple screens.
 | **very_good_analysis**    | Ensures a consistent code style and code quality through strict linter rules.             |
 |                           |
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -496,7 +499,7 @@ Contains **reusable widgets** that can be used across multiple screens.
 
 [Image comming soon]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -504,7 +507,7 @@ Contains **reusable widgets** that can be used across multiple screens.
 
 View changes and updates to the app [here](https://github.com/foxnoir/TTD_clean_architecture_template/blob/develop/CHANGELOG.md).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -533,7 +536,7 @@ expect(methodCall, completes);
 - **Limitation:**
   - This approach does not allow testing for exceptions or validating thrown errors.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Variant 2: Use a Function Reference and Assert Behavior
 
@@ -572,7 +575,7 @@ expect(
     - That the correct exceptions are thrown under specific conditions.
   - This variant enables this by using a function reference, allowing the test framework to monitor the function execution.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Comparison
 
@@ -581,7 +584,7 @@ expect(
 | **Variant 1** | Simple tests with no exceptions expected         | Cannot test for exceptions  |
 | **Variant 2** | Tests requiring exception handling or validation | Slightly more verbose setup |
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Testing Method Completion
 
@@ -610,7 +613,7 @@ expect(
 );
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -624,7 +627,7 @@ expect(
 - [Mocktail](https://www.dbestech.com/tutorials/flutter-test-with-mocktail)
 - [TDD](https://www.browserstack.com/guide/tdd-in-flutter)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 [auto-route]: https://img.shields.io/badge/Auto%20Route-00D09C.svg?style=for-the-badge&logo=autoroute&logoColor=white
 [auto-route-url]: https://pub.dev/packages/auto_route
 

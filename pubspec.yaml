@@ -33,11 +33,11 @@ dependencies:
   go_router: ^14.6.3
   dart_mappable: ^4.3.0
   http: ^1.2.2
+  bloc_test: ^10.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  bloc_test: ^10.0.0
   flutter_lints: ^2.0.0
   mocktail: ^1.0.0
   very_good_analysis: ^6.0.0
