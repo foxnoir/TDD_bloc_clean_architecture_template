@@ -256,6 +256,10 @@ Write test for bloc_files.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
+#### 2. <ins>Finally UI using using [GetIt](https://pub.dev/packages/get_it) for dependency injection</ins>
+
+<p align="right"><a href="#readme-top">back to top</a></p>
+
 ---
 
 ## Style Guide
@@ -320,10 +324,8 @@ Write test for bloc_files.
 [![Equatable][equatable]][equatable-url]
 [![Flutter Bloc][flutter-bloc]][flutter-bloc-url]
 [![Flutter Localizations][flutter-localizations]][flutter-localizations-url]
-[![Flutter Secure Storage][flutter-secure-storage]][flutter-secure-storage-url]
 [![GetIt][get-it]][get-it-url]
 [![HTTP][http]][http-url]
-[![Hive][hive]][hive-url]
 [![Injectable][injectable]][injectable-url]
 [![Intl][intl]][intl-url]
 [![Mappable][mappable]][mappable-url]

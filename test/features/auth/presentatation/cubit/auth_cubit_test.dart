@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
-import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
 import 'package:tdd_clean_architecture/features/auth/presentatation/cubit/auth_cubit.dart';
@@ -30,7 +29,6 @@ void main() {
 
   const tCreateUserParams = CreateUserParams.empty();
   final tApiFailure = ApiFailure(message: 'message', statusCode: 400);
-  final tListUsers = List<User>.empty();
 
   setUp(() {
     /// Initialize dependencies
@@ -106,7 +104,7 @@ void main() {
       'should emit [GettingUsers, UsersLoaded] when successful',
       build: () {
         when(() => getUsers()).thenAnswer(
-          (_) async => Right(tListUsers),
+          (_) async => const Right([]),
         );
         return cubit;
       },
@@ -115,11 +113,11 @@ void main() {
       /// list of states we expecting to emit
       expect: () => [
         const GettingUsers(),
-        UsersLoaded(tListUsers),
+        const UsersLoaded([]),
       ],
       verify: (_) {
         verify(() => getUsers()).called(1);
-        verifyNoMoreInteractions(createUser);
+        verifyNoMoreInteractions(getUsers);
       },
     );
 
@@ -141,7 +139,7 @@ void main() {
       ],
       verify: (_) {
         verify(() => getUsers()).called(1);
-        verifyNoMoreInteractions(createUser);
+        verifyNoMoreInteractions(getUsers);
       },
     );
   });

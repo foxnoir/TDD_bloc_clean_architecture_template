@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/network/api_config.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
@@ -28,6 +29,7 @@ abstract class AuthRemoteDataSource {
   Future<List<UserModel>> getUsers();
 }
 
+@LazySingleton(as: AuthRemoteDataSource)
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   const AuthRemoteDataSourceImpl(this._client);
   final http.Client _client;

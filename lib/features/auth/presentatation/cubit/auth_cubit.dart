@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
@@ -8,6 +9,7 @@ part 'auth_state.dart';
 
 /// Cubit doesn't use events
 
+@injectable
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit({
     required CreateUser createUser,

@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:tdd_clean_architecture/core/errors/exceptions.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
@@ -14,6 +15,7 @@ import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repo
 /// data layers. It retrieves data from the remote data source, handles
 /// exceptions, and returns clean domain entities (User).
 
+@LazySingleton(as: AuthRepository)
 class AuthRepoImpl implements AuthRepository {
   const AuthRepoImpl(this._remoteDataSource);
 
