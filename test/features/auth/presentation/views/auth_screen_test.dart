@@ -8,7 +8,7 @@ import 'package:tdd_clean_architecture/core/localization/localization_extensions
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/views/auth_screen.dart';
-import 'package:tdd_clean_architecture/features/auth/presentation/widgets/add_user_dialog.dart';
+import 'package:tdd_clean_architecture/features/auth/presentation/widgets/auth_add_user_dialog.dart';
 import 'package:tdd_clean_architecture/global_widgets/app_loading_column.dart';
 
 import '../../../../test_helpers/mocks.mock.dart';
@@ -125,7 +125,7 @@ void main() {
     });
 
     testWidgets(
-        'displays [AddUserDialog] when '
+        'displays [AuthAddUserDialog] when '
         '[FloatingActionButton] is pressed', (tester) async {
       // Arrange
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
@@ -137,7 +137,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 100));
 
       // Assert
-      expect(find.byType(AddUserDialog), findsOneWidget);
+      expect(find.byType(AuthAddUserDialog), findsOneWidget);
     });
 
     testWidgets('shows [SnackBar] when state is [AuthError]', (tester) async {

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
 
-class AddUserDialog extends StatelessWidget {
-  const AddUserDialog({required this.nameController, super.key});
+class AuthAddUserDialog extends StatelessWidget {
+  const AuthAddUserDialog({required this.nameController, super.key});
 
   final TextEditingController nameController;
 

@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tdd_clean_architecture/core/di/di.dart';
 import 'package:tdd_clean_architecture/core/localization/localization_extensions.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:tdd_clean_architecture/features/auth/presentation/widgets/add_user_dialog.dart';
+import 'package:tdd_clean_architecture/features/auth/presentation/widgets/auth_add_user_dialog.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/widgets/auth_user_list.dart';
 import 'package:tdd_clean_architecture/global_widgets/app_loading_column.dart';
 
@@ -71,7 +71,7 @@ class _AuthViewState extends State<AuthView> {
             onPressed: () async {
               await showDialog<void>(
                 context: context,
-                builder: (context) => AddUserDialog(
+                builder: (context) => AuthAddUserDialog(
                   nameController: nameController,
                 ),
               );
