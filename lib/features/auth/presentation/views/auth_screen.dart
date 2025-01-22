@@ -5,7 +5,8 @@ import 'package:tdd_clean_architecture/core/di/di.dart';
 import 'package:tdd_clean_architecture/core/localization/localization_extensions.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/widgets/add_user_dialog.dart';
-import 'package:tdd_clean_architecture/features/auth/presentation/widgets/loading_column.dart';
+import 'package:tdd_clean_architecture/features/auth/presentation/widgets/auth_user_list.dart';
+import 'package:tdd_clean_architecture/global_widgets/app_loading_column.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -56,24 +57,10 @@ class _AuthViewState extends State<AuthView> {
       builder: (context, state) {
         return Scaffold(
           body: state is GettingUsers
-              ? LoadingColumn(message: localization.fetchingUsers)
+              ? AppLoadingColumn(message: localization.fetchingUsers)
               : state is CreatingUser
-                  ? LoadingColumn(message: localization.creatingUser)
-                  : state is UsersLoaded
-                      ? Center(
-                          child: ListView.builder(
-                            itemCount: state.users.length,
-                            itemBuilder: (context, index) {
-                              final user = state.users[index];
-                              return ListTile(
-                                leading: Image.network(user.avatar),
-                                title: Text(user.name),
-                                subtitle: Text(user.createdAt.substring(10)),
-                              );
-                            },
-                          ),
-                        )
-                      : const SizedBox.shrink(),
+                  ? AppLoadingColumn(message: localization.creatingUser)
+                  : const AuthUserList(),
           floatingActionButton: FloatingActionButton.extended(
             onPressed: () async {
               await showDialog<void>(

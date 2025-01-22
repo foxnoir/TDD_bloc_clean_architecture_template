@@ -9,7 +9,7 @@ import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/views/auth_screen.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/widgets/add_user_dialog.dart';
-import 'package:tdd_clean_architecture/features/auth/presentation/widgets/loading_column.dart';
+import 'package:tdd_clean_architecture/global_widgets/app_loading_column.dart';
 
 import '../../../../test_helpers/mocks.mock.dart';
 
@@ -39,7 +39,20 @@ void main() {
   }
 
   group('AuthScreen Widget Tests', () {
-    testWidgets('displays LoadingColumn when state is GettingUsers',
+    final tListUsers = [
+      UserModel.empty().copyWith(
+        name: 'John Doe',
+        avatar:
+            'https://redthread.uoregon.edu/files/large/affd16fd5264cab9197da4cd1a996f820e601ee4.jpg',
+      ),
+      UserModel.empty().copyWith(
+        name: 'Jane Doe',
+        avatar:
+            'https://redthread.uoregon.edu/files/large/affd16fd5264cab9197da4cd1a996f820e601ee4.jpg',
+      ),
+    ];
+
+    testWidgets('displays AppLoadingColumn when state is GettingUsers',
         (tester) async {
       // Arrange
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
@@ -50,77 +63,97 @@ void main() {
       await tester.pump(); // Allow the state to be reflected
 
       // Assert
-      expect(find.byType(LoadingColumn), findsOneWidget);
+      expect(find.byType(AppLoadingColumn), findsOneWidget);
       expect(
-          find.textContaining(FallbackStrings.fetchingUsers), findsOneWidget);
+        find.textContaining(FallbackStrings.fetchingUsers),
+        findsOneWidget,
+      );
     });
 
-    // testWidgets('displays LoadingColumn when state is CreatingUser',
-    //     (tester) async {
-    //   // Arrange
-    //   when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
-    //   when(() => mockAuthCubit.state).thenReturn(const CreatingUser());
+    testWidgets('displays AppLoadingColumn when state is CreatingUser',
+        (tester) async {
+      // Arrange
+      when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
+      when(() => mockAuthCubit.state).thenReturn(const CreatingUser());
 
-    //   // Act
-    //   await pumpAuthScreen(tester);
-    //   await tester.pump();
+      // Act
+      await pumpAuthScreen(tester);
+      await tester.pump();
 
-    //   // Assert
-    //   expect(find.byType(LoadingColumn), findsOneWidget);
-    //   expect(find.textContaining(FallbackStrings.creatingUser), findsOneWidget);
-    // });
+      // Assert
+      expect(find.byType(AppLoadingColumn), findsOneWidget);
+      expect(find.textContaining(FallbackStrings.creatingUser), findsOneWidget);
+    });
 
-    // testWidgets('displays user list when state is UsersLoaded', (tester) async {
-    //   // Arrange
-    //   final users = [
-    //     const UserModel(
-    //         id: '1',
-    //         name: 'John Doe',
-    //         createdAt: '2023-01-01',
-    //         avatar: 'http://example.com/avatar.jpg'),
-    //   ];
-    //   when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
-    //   when(() => mockAuthCubit.state).thenReturn(UsersLoaded(users));
+    testWidgets('displays user list when state is UsersLoaded', (tester) async {
+      when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
+      when(() => mockAuthCubit.state).thenReturn(UsersLoaded(tListUsers));
 
-    //   // Act
-    //   await pumpAuthScreen(tester);
-    //   await tester.pump();
+      // Act
+      await pumpAuthScreen(tester);
+      await tester.pump();
 
-    //   // Assert
-    //   expect(find.byType(ListTile), findsOneWidget);
-    //   expect(find.text('John Doe'), findsOneWidget);
-    // });
+      // Assert
+      expect(find.byType(ListTile), findsNWidgets(tListUsers.length));
+      expect(find.text('John Doe'), findsOneWidget);
+      expect(find.text('Jane Doe'), findsOneWidget);
+      expect(find.byType(Image), findsNWidgets(tListUsers.length));
+    });
 
-    // testWidgets('displays AddUserDialog when FloatingActionButton is pressed',
-    //     (tester) async {
-    //   // Arrange
-    //   when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
-    //   when(() => mockAuthCubit.state).thenReturn(const GettingUsers());
+    testWidgets('displays error icon if avatar fails to load', (tester) async {
+      // Arrange
+      final errorAvatarListUsers = [
+        UserModel.empty().copyWith(
+          name: 'Error Avatar',
+          avatar: 'https://example.com/invalid_url.jpg',
+        ),
+      ];
 
-    //   // Act
-    //   await pumpAuthScreen(tester);
-    //   await tester.tap(find.byType(FloatingActionButton));
-    //   await tester.pumpAndSettle();
+      when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
+      when(() => mockAuthCubit.state)
+          .thenReturn(UsersLoaded(errorAvatarListUsers));
 
-    //   // Assert
-    //   expect(find.byType(AddUserDialog), findsOneWidget);
-    // });
+      // Act
+      await pumpAuthScreen(tester);
+      await tester.pumpAndSettle();
 
-    // testWidgets('shows SnackBar when state is AuthError', (tester) async {
-    //   // Arrange
-    //   when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
-    //   whenListen(
-    //     mockAuthCubit,
-    //     Stream.fromIterable([const AuthError('Error occurred')]),
-    //     initialState: const GettingUsers(),
-    //   );
+      // Assert
+      expect(find.byType(ListTile), findsOneWidget);
+      expect(find.byIcon(Icons.error), findsOneWidget);
+    });
 
-    //   // Act
-    //   await pumpAuthScreen(tester);
-    //   await tester.pump(); // Allow the listener to react
+    testWidgets('displays AddUserDialog when FloatingActionButton is pressed',
+        (tester) async {
+      // Arrange
+      when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
+      when(() => mockAuthCubit.state).thenReturn(const GettingUsers());
 
-    //   // Assert
-    //   expect(find.text('Error occurred'), findsOneWidget);
-    // });
+      // Act
+      await pumpAuthScreen(tester);
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pump(const Duration(milliseconds: 100));
+
+      // Assert
+      expect(find.byType(AddUserDialog), findsOneWidget);
+    });
+
+    testWidgets('shows SnackBar when state is AuthError', (tester) async {
+      // Arrange
+      const errorMessage = 'Error occurred';
+      when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
+      whenListen(
+        mockAuthCubit,
+        Stream.fromIterable([const AuthError(errorMessage)]),
+        initialState: const GettingUsers(),
+      );
+
+      // Act
+      await pumpAuthScreen(tester);
+      await tester.pump();
+
+      // Assert
+      expect(find.byType(SnackBar), findsOneWidget);
+      expect(find.text(errorMessage), findsOneWidget);
+    });
   });
 }

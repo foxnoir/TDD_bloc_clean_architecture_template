@@ -523,9 +523,9 @@ When testing `Future<void>` methods, there are two common approaches:
 
 ```dart
 final methodCall = remoteDataSource.createUser(
-  createdAt: 'test.createdAt',
-  name: 'test.name',
-  avatar: 'test.avatar',
+  createdAt: 'empty.createdAt',
+  name: 'empty.name',
+  avatar: 'empty.avatar',
 );
 
 expect(methodCall, completes);
@@ -548,9 +548,9 @@ final methodCall = remoteDataSource.createUser;
 // To test successful completion
 expect(
   () => methodCall(
-    name: 'test.name',
-    createdAt: 'test.createdAt',
-    avatar: 'test.avatar',
+    name: 'empty.name',
+    createdAt: 'empty.createdAt',
+    avatar: 'empty.avatar',
   ),
   completes,
 );
@@ -558,9 +558,9 @@ expect(
 // To test error handling
 expect(
   () => methodCall(
-    name: 'test.name',
-    createdAt: 'test.createdAt',
-    avatar: 'test.avatar',
+    name: 'empty.name',
+    createdAt: 'empty.createdAt',
+    avatar: 'empty.avatar',
   ),
   throwsA(isA<APIException>()),
 );
@@ -594,9 +594,9 @@ expect(
 final methodCall = remoteDataSource.createUser;
 expect(
   () => methodCall(
-    name: 'test.name',
-    createdAt: 'test.createdAt',
-    avatar: 'test.avatar',
+    name: 'empty.name',
+    createdAt: 'empty.createdAt',
+    avatar: 'empty.avatar',
   ),
   completes,
 );
@@ -607,9 +607,9 @@ expect(
 ```dart
 expect(
   () => methodCall(
-    name: 'test.name',
-    createdAt: 'test.createdAt',
-    avatar: 'test.avatar',
+    name: 'empty.name',
+    createdAt: 'empty.createdAt',
+    avatar: 'empty.avatar',
   ),
   throwsA(isA<APIException>()),
 );

@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tdd_clean_architecture/core/log/logger.dart';
 import 'package:tdd_clean_architecture/core/router/app_router_names.dart';
 import 'package:tdd_clean_architecture/core/router/page_not_found.dart';
 import 'package:tdd_clean_architecture/core/router/transiton_page.dart';

@@ -44,9 +44,9 @@ Future<void> main() async {
         /// Assert
         expect(
           methodCall(
-            createdAt: 'test.createdAt',
-            name: 'test.name',
-            avatar: 'test.avatar',
+            createdAt: 'empty.createdAt',
+            name: 'empty.name',
+            avatar: 'empty.avatar',
           ),
           completes,
         );
@@ -55,9 +55,9 @@ Future<void> main() async {
           () => client.post(
             Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
             body: jsonEncode({
-              'createdAt': 'test.createdAt',
-              'name': 'test.name',
-              'avatar': 'test.avatar',
+              'createdAt': 'empty.createdAt',
+              'name': 'empty.name',
+              'avatar': 'empty.avatar',
             }),
             headers: {'Content-Type': 'application/json'},
           ),
@@ -88,9 +88,9 @@ Future<void> main() async {
         /// we want the higher ordered method to call the method
         expect(
           () async => methodCall(
-            createdAt: 'test.createdAt',
-            name: 'test.name',
-            avatar: 'test.avatar',
+            createdAt: 'empty.createdAt',
+            name: 'empty.name',
+            avatar: 'empty.avatar',
           ),
           throwsA(
             const ApiException(
@@ -104,9 +104,9 @@ Future<void> main() async {
           () => client.post(
             Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
             body: jsonEncode({
-              'createdAt': 'test.createdAt',
-              'name': 'test.name',
-              'avatar': 'test.avatar',
+              'createdAt': 'empty.createdAt',
+              'name': 'empty.name',
+              'avatar': 'empty.avatar',
             }),
             headers: {'Content-Type': 'application/json'},
           ),
@@ -136,9 +136,9 @@ Future<void> main() async {
         /// Assert
         expect(
           () => methodCall(
-            createdAt: 'test.createdAt',
-            name: 'test.name',
-            avatar: 'test.avatar',
+            createdAt: 'empty.createdAt',
+            name: 'empty.name',
+            avatar: 'empty.avatar',
           ),
           throwsA(
             isA<ApiException>()
@@ -157,9 +157,9 @@ Future<void> main() async {
           () => client.post(
             Uri.https(ApiConfig.kBaseUrl, ApiConfig.users),
             body: jsonEncode({
-              'createdAt': 'test.createdAt',
-              'name': 'test.name',
-              'avatar': 'test.avatar',
+              'createdAt': 'empty.createdAt',
+              'name': 'empty.name',
+              'avatar': 'empty.avatar',
             }),
             headers: {'Content-Type': 'application/json'},
           ),

@@ -60,10 +60,10 @@ Future<void> main() async {
     test('toJson should return a [JSON] with the right data', () {
       // Arrange
       final expected = jsonEncode({
-        'id': 'test.id',
-        'name': 'test.name',
-        'createdAt': 'test.createdAt',
-        'avatar': 'test.avatar',
+        'id': 'empty.id',
+        'name': 'empty.name',
+        'createdAt': 'empty.createdAt',
+        'avatar': 'empty.avatar',
       });
 
       // Act

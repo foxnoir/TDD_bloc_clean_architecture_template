@@ -112,7 +112,7 @@ Future<void> main() async {
   });
 
   group('AUTH_REPO_IMPL getUsers', () {
-    final tListUsers = List<UserModel>.empty();
+    final tListUsers = [UserModel.empty()];
 
     test(
       'should call the [AuthRemoteDataSource.getUsers] and '

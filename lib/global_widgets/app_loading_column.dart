@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoadingColumn extends StatelessWidget {
-  const LoadingColumn({required this.message, super.key});
+class AppLoadingColumn extends StatelessWidget {
+  const AppLoadingColumn({required this.message, super.key});
 
   final String message;
 
