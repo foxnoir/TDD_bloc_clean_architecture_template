@@ -417,6 +417,7 @@ flutter-app/
 │ │ ├── errors/
 │ │ ├── localization/
 │ │ ├── log/
+│ │ ├── network/
 │ │ ├── router/
 │ │ ├── theme/
 │ │ ├── usecases/
@@ -424,20 +425,21 @@ flutter-app/
 │ ├── features/
 │ │ └── feature/
 │ │ ├── data/
+│ │ │ └── data_sources/
 │ │ │ ├── models/
 │ │ │ ├── repositories/
-│ │ │ └── data_sources/
 │ │ ├── domain/
 │ │ │ ├── entities/
 │ │ │ ├── repositories/
 │ │ │ └── usecases/
 │ │ └── presentation/
-│ │ ├── views/
-│ │ ├── widgets/
-│ │ └── bloc/
+│ │ │ ├── views/
+│ │ │ ├── widgets/
+│ │ │ └── bloc/
 │ │ └── navigation/
 │ │ └── storage/
 │ └── global_widgets
+│ └── l10n
 │ └── main.dart
 ├── test/
 ├── web/
