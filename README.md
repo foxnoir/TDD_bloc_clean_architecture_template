@@ -632,8 +632,6 @@ expect(
 - [TDD](https://www.browserstack.com/guide/tdd-in-flutter)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
-[auto-route]: https://img.shields.io/badge/Auto%20Route-00D09C.svg?style=for-the-badge&logo=autoroute&logoColor=white
-[auto-route-url]: https://pub.dev/packages/auto_route
 
 [bloc]: https://img.shields.io/badge/Bloc-8B0000.svg?style=for-the-badge&logo=bloc&logoColor=white
 [bloc-url]: https://pub.dev/packages/bloc
