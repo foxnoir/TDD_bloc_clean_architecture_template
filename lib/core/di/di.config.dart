@@ -18,8 +18,8 @@ import 'package:tdd_clean_architecture/features/auth/data/data_sources/auth_remo
     as _i862;
 import 'package:tdd_clean_architecture/features/auth/data/repositories/auth_repo_impl.dart'
     as _i807;
-import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart'
-    as _i79;
+import 'package:tdd_clean_architecture/features/auth/domain/repositories/auth_repository.dart'
+    as _i394;
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart'
     as _i791;
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart'
@@ -47,11 +47,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i519.Client>(() => registerModule.provideHttpClient());
     gh.lazySingleton<_i862.AuthRemoteDataSource>(
         () => _i862.AuthRemoteDataSourceImpl(gh<_i519.Client>()));
-    gh.lazySingleton<_i79.AuthRepository>(
+    gh.lazySingleton<_i394.AuthRepository>(
         () => _i807.AuthRepoImpl(gh<_i862.AuthRemoteDataSource>()));
-    gh.factory<_i527.GetUsers>(() => _i527.GetUsers(gh<_i79.AuthRepository>()));
+    gh.factory<_i527.GetUsers>(
+        () => _i527.GetUsers(gh<_i394.AuthRepository>()));
     gh.factory<_i791.CreateUser>(
-        () => _i791.CreateUser(gh<_i79.AuthRepository>()));
+        () => _i791.CreateUser(gh<_i394.AuthRepository>()));
     gh.factory<_i193.AuthCubit>(() => _i193.AuthCubit(
           createUser: gh<_i791.CreateUser>(),
           getUsers: gh<_i527.GetUsers>(),

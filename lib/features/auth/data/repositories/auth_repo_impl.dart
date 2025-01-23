@@ -5,7 +5,7 @@ import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/data/data_sources/auth_remote_data_source.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
-import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/repositories/auth_repository.dart';
 
 /// talks to datasource
 /// gets result/exception returns result/failure

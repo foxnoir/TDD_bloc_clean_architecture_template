@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/features/auth/data/data_sources/auth_remote_data_source.dart';
-import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/repositories/auth_repository.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/create_user.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';

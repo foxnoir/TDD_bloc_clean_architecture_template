@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tdd_clean_architecture/core/errors/failures.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
-import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/repositories/auth_repository.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/usecases/get_users.dart';
 
 import '../../../../test_helpers/mocks.mock.dart';

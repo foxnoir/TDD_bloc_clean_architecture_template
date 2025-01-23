@@ -8,7 +8,7 @@ import 'package:tdd_clean_architecture/features/auth/data/data_sources/auth_remo
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/data/repositories/auth_repo_impl.dart';
 import 'package:tdd_clean_architecture/features/auth/domain/entities/user.dart';
-import 'package:tdd_clean_architecture/features/auth/domain/repository/auth_repository.dart';
+import 'package:tdd_clean_architecture/features/auth/domain/repositories/auth_repository.dart';
 
 /// when returning void use Future.value() for testing
 
