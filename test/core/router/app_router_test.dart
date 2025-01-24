@@ -10,7 +10,7 @@ void main() {
   late AppRouter appRouter;
 
   setUp(() {
-    appRouter = AppRouter(isTesting: true);
+    appRouter = AppRouter(isRouteTesting: true);
   });
 
   Future<void> pumpRouter(WidgetTester tester, GoRouter router) async {

@@ -8,8 +8,8 @@ import 'package:tdd_clean_architecture/features/auth/presentation/views/auth_scr
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class AppRouter {
-  AppRouter({required this.isTesting});
-  final bool isTesting;
+  AppRouter({required this.isRouteTesting});
+  final bool isRouteTesting;
 
   GoRouter router([String? initialLocation]) => GoRouter(
         initialLocation: AppRouteNames.auth,
@@ -24,7 +24,8 @@ class AppRouter {
               GoRoute(
                 path: AppRouteNames.auth,
                 name: AppRouteNames.auth,
-                builder: (context, state) => AuthScreen(isTesting: isTesting),
+                builder: (context, state) =>
+                    AuthScreen(isRouteTesting: isRouteTesting),
               ),
             ],
           ),
@@ -32,18 +33,18 @@ class AppRouter {
       );
 }
 
-final appRouter = AppRouter(isTesting: false).router();
+final appRouter = AppRouter(isRouteTesting: false).router();
 
 extension GoRouterLocation on GoRouter {
-  String location({required bool isTesting}) {
-    final lastMatch = isTesting
+  String location({required bool isRouteTesting}) {
+    final lastMatch = isRouteTesting
         ? RouteMatch(
             route: GoRoute(
               path: AppRouteNames.auth,
               name: AppRouteNames.auth,
               pageBuilder: (context, state) => SlideTransitionPage(
                 key: state.pageKey,
-                child: AuthScreen(isTesting: isTesting),
+                child: AuthScreen(isRouteTesting: isRouteTesting),
               ),
             ),
             pageKey: const ValueKey('routeTesting'),

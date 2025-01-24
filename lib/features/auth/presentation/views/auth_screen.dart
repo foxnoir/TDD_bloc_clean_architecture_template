@@ -10,14 +10,14 @@ import 'package:tdd_clean_architecture/global_widgets/app_loading_column.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({
-    required this.isTesting,
+    required this.isRouteTesting,
     super.key,
   });
-  final bool isTesting;
+  final bool isRouteTesting;
 
   @override
   Widget build(BuildContext context) {
-    return isTesting
+    return isRouteTesting
         ? Container()
         : BlocProvider(
             create: (context) => DI.getIt<AuthCubit>(),

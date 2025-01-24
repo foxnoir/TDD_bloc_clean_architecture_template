@@ -643,7 +643,7 @@ expect(
 [dartz-url]: https://pub.dev/packages/dartz
 [equatable]: https://img.shields.io/badge/Equatable-32CD32.svg?style=for-the-badge&logo=equatable&logoColor=white
 [equatable-url]: https://pub.dev/packages/equatable
-[firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase&logoColor=white
+[firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
 [firebase-url]: https://firebase.google.com/
 [flutter]: https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white
 [flutter-url]: https://flutter.dev/
