@@ -90,7 +90,7 @@ Future<void> main() async {
       /// list of states we expecting to emit
       expect: () => [
         const CreatingUser(),
-        AuthError(tApiFailure.errorMessage),
+        AuthError(message: tApiFailure.errorMessage),
       ],
       verify: (_) {
         verify(() => createUser(params: tCreateUserParams)).called(1);
@@ -113,7 +113,7 @@ Future<void> main() async {
       /// list of states we expecting to emit
       expect: () => [
         const GettingUsers(),
-        const UsersLoaded([]),
+        const UsersLoaded(users: []),
       ],
       verify: (_) {
         verify(() => getUsers()).called(1);
@@ -135,7 +135,7 @@ Future<void> main() async {
       /// list of states we expecting to emit
       expect: () => [
         const GettingUsers(),
-        AuthError(tApiFailure.errorMessage),
+        AuthError(message: tApiFailure.errorMessage),
       ],
       verify: (_) {
         verify(() => getUsers()).called(1);

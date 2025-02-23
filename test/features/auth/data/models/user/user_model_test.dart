@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dart_mappable/dart_mappable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tdd_clean_architecture/core/utils/type_defs.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
@@ -72,6 +73,18 @@ Future<void> main() async {
       // Assert
       expect(result, expected);
     });
+
+    test(
+      'should throw a [MapperException] when the map is invalid',
+      () {
+        final map = Map<String, dynamic>.from(tMap)..remove('id');
+
+        expect(
+          () => UserModelMapper.fromMap(map),
+          throwsA(isA<MapperException>()),
+        );
+      },
+    );
 
     test('copyWith should return a [UserModel] with different data', () {
       // Arrange

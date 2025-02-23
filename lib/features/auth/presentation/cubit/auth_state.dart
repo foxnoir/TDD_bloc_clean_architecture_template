@@ -24,7 +24,7 @@ final class UserCreated extends AuthState {
 }
 
 class UsersLoaded extends AuthState {
-  const UsersLoaded(this.users);
+  const UsersLoaded({required this.users});
 
   final List<User> users;
 
@@ -36,7 +36,7 @@ class UsersLoaded extends AuthState {
 }
 
 class AuthError extends AuthState {
-  const AuthError(this.message);
+  const AuthError({required this.message});
 
   final String message;
 

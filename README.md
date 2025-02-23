@@ -382,7 +382,7 @@ flutter run
 
 ```
 
-flutter pub run flutter_launcher_icons:main
+flutter pub run flutter_launcher_icons
 
 ```
 
@@ -415,7 +415,7 @@ flutter-app/
 │ ├── core/
 │ │ ├── di/
 │ │ ├── errors/
-│ │ ├── localization/
+│ │ ├── extensions/
 │ │ ├── log/
 │ │ ├── network/
 │ │ ├── router/

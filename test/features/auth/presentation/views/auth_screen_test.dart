@@ -4,13 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:tdd_clean_architecture/core/localization/localization_extensions.dart';
+import 'package:tdd_clean_architecture/core/extensions/localization_extensions.dart';
 import 'package:tdd_clean_architecture/features/auth/data/models/user_model.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/views/auth_screen.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/widgets/auth_add_user_dialog.dart';
 import 'package:tdd_clean_architecture/global_widgets/app_loading_column.dart';
 
+import '../../../../test_helpers/localization_mock.dart';
 import '../../../../test_helpers/mocks.mock.dart';
 
 void main() {
@@ -55,6 +56,8 @@ void main() {
     testWidgets('displays [AppLoadingColumn] when state is [GettingUsers]',
         (tester) async {
       // Arrange
+      final appLocalizations = await getLocalizations(tester)
+          .then((appLocalizations) => appLocalizations);
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
       when(() => mockAuthCubit.state).thenReturn(const GettingUsers());
 
@@ -65,7 +68,7 @@ void main() {
       // Assert
       expect(find.byType(AppLoadingColumn), findsOneWidget);
       expect(
-        find.textContaining(FallbackStrings.fetchingUsers),
+        find.textContaining(appLocalizations.fetchingUsers),
         findsOneWidget,
       );
     });
@@ -73,6 +76,8 @@ void main() {
     testWidgets('displays [AppLoadingColumn] when state is [CreatingUser]',
         (tester) async {
       // Arrange
+      final appLocalizations = await getLocalizations(tester)
+          .then((appLocalizations) => appLocalizations);
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
       when(() => mockAuthCubit.state).thenReturn(const CreatingUser());
 
@@ -82,13 +87,17 @@ void main() {
 
       // Assert
       expect(find.byType(AppLoadingColumn), findsOneWidget);
-      expect(find.textContaining(FallbackStrings.creatingUser), findsOneWidget);
+      expect(
+        find.textContaining(appLocalizations.creatingUser),
+        findsOneWidget,
+      );
     });
 
     testWidgets('displays [UserList] when state is [UsersLoaded]',
         (tester) async {
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
-      when(() => mockAuthCubit.state).thenReturn(UsersLoaded(tListUsers));
+      when(() => mockAuthCubit.state)
+          .thenReturn(UsersLoaded(users: tListUsers));
 
       // Act
       await pumpAuthScreen(tester);
@@ -113,7 +122,7 @@ void main() {
 
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
       when(() => mockAuthCubit.state)
-          .thenReturn(UsersLoaded(errorAvatarListUsers));
+          .thenReturn(UsersLoaded(users: errorAvatarListUsers));
 
       // Act
       await pumpAuthScreen(tester);
@@ -146,7 +155,7 @@ void main() {
       when(() => mockAuthCubit.getUsers()).thenAnswer((_) async {});
       whenListen(
         mockAuthCubit,
-        Stream.fromIterable([const AuthError(errorMessage)]),
+        Stream.fromIterable([const AuthError(message: errorMessage)]),
         initialState: const GettingUsers(),
       );
 

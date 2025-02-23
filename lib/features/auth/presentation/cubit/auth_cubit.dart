@@ -37,7 +37,7 @@ class AuthCubit extends Cubit<AuthState> {
     );
 
     result.fold(
-      (failure) => emit(AuthError(failure.errorMessage)),
+      (failure) => emit(AuthError(message: failure.errorMessage)),
       (_) => emit(const UserCreated()),
     );
   }
@@ -47,8 +47,8 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await _getUsers();
 
     result.fold(
-      (failure) => emit(AuthError(failure.errorMessage)),
-      (users) => emit(UsersLoaded(users)),
+      (failure) => emit(AuthError(message: failure.errorMessage)),
+      (users) => emit(UsersLoaded(users: users)),
     );
   }
 }

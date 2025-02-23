@@ -35,8 +35,8 @@ Future<void> main() async {
     const avatar = 'whatever.avatar';
 
     test(
-      'should call the [AuthRemoteDataSource.createUser] and complete '
-      'successfully when remote source call is successful',
+      'should call [AuthRemoteDataSource.createUser] and '
+      'return [void] when remote source call is successful',
       () async {
         ///  Arrange
         when(
@@ -115,7 +115,7 @@ Future<void> main() async {
     final tListUsers = [UserModel.empty()];
 
     test(
-      'should call the [AuthRemoteDataSource.getUsers] and '
+      'should call [AuthRemoteDataSource.getUsers] and '
       'return a [List<User>] when remote source call is successful',
       () async {
         ///  Arrange
