@@ -1,0 +1,127 @@
+[
+  {
+    "image": "dart",
+    "file": "dart.svg",
+    "href": "https://dart.dev/"
+  },
+  {
+    "image": "flutter",
+    "file": "flutter.svg",
+    "href": "https://flutter.dev/"
+  },
+  {
+    "image": "flutter-localizations",
+    "file": "flutter_localizations.svg",
+    "href": "https://docs.flutter.dev/ui/internationalization"
+  },
+  {
+    "image": "freezed",
+    "file": "freezed.svg",
+    "href": "https://pub.dev/packages/freezed"
+  },
+  {
+    "image": "fvm",
+    "file": "fvm.svg",
+    "href": "https://fvm.app"
+  },
+  {
+    "image": "gorouter",
+    "file": "gorouter.svg",
+    "href": "https://pub.dev/packages/go_router"
+  },
+  {
+    "image": "instagram",
+    "file": "instagram.svg",
+    "href": "https://www.instagram.com/codeincouture/"
+  },
+  {
+    "image": "intl",
+    "file": "intl.svg",
+    "href": "https://pub.dev/packages/intl"
+  },
+  {
+    "image": "ios",
+    "file": "ios.svg",
+    "href": "https://developer.apple.com/ios/"
+  },
+  {
+    "image": "linkedin",
+    "file": "linkedin.svg",
+    "href": "https://www.linkedin.com/in/tanja-polz-5636401a5/"
+  },
+  {
+    "image": "riverpod",
+    "file": "riverpod.svg",
+    "href": "https://pub.dev/packages/flutter_riverpod"
+  },
+  {
+    "image": "riverpod-lint",
+    "file": "riverpod_lint.svg",
+    "href": "https://pub.dev/packages/riverpod_lint"
+  },
+  {
+    "image": "very-good",
+    "file": "very_good.svg",
+    "href": "https://pub.dev/packages/very_good_analysis"
+  },
+  {
+    "image": "web",
+    "file": "web.svg",
+    "href": "https://docs.flutter.dev/platform-integration/web"
+  },
+  {
+    "image": "x",
+    "file": "x.svg",
+    "href": "https://twitter.com/_foxnoir_?lang=de"
+  },
+  {
+    "image": "firebase",
+    "file": "firebase.svg",
+    "href": "https://firebase.google.com/"
+  },
+  {
+    "image": "firestore",
+    "file": "firestore.svg",
+    "href": "https://firebase.google.com/docs/firestore"
+  },
+  {
+    "image": "dartz",
+    "file": "dartz.svg",
+    "href": "https://pub.dev/packages/dartz"
+  },
+  {
+    "image": "dio",
+    "file": "dio.svg",
+    "href": "https://pub.dev/packages/dio"
+  },
+  {
+    "image": "equatable",
+    "file": "equatable.svg",
+    "href": "https://pub.dev/packages/equatable"
+  },
+  {
+    "image": "get-it",
+    "file": "get_it.svg",
+    "href": "https://pub.dev/packages/get_it"
+  },
+  {
+    "image": "http",
+    "file": "http.svg",
+    "href": "https://pub.dev/packages/http"
+  },
+  {
+    "image": "injectable",
+    "file": "injectable.svg",
+    "href": "https://pub.dev/packages/injectable"
+  },
+  {
+    "image": "mappable",
+    "file": "mappable.svg",
+    "href": "https://pub.dev/packages/dart_mappable"
+  },
+  {
+    "image": "mocktail",
+    "file": "mocktail.svg",
+    "href": "https://pub.dev/packages/mocktail"
+  }
+]

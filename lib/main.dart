@@ -44,6 +44,7 @@ class TemplateApp extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       locale: const Locale('en'),
       theme: getLightTheme(),
+      themeMode: ThemeMode.light,
     );
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tdd_clean_architecture/core/router/app_router_names.dart';
 import 'package:tdd_clean_architecture/core/router/page_not_found.dart';
-import 'package:tdd_clean_architecture/core/router/transiton_page.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/views/auth_screen.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -35,25 +34,4 @@ class AppRouter {
 
 final appRouter = AppRouter(isRouteTesting: false).router();
 
-extension GoRouterLocation on GoRouter {
-  String location({required bool isRouteTesting}) {
-    final lastMatch = isRouteTesting
-        ? RouteMatch(
-            route: GoRoute(
-              path: AppRouteNames.auth,
-              name: AppRouteNames.auth,
-              pageBuilder: (context, state) => SlideTransitionPage(
-                key: state.pageKey,
-                child: AuthScreen(isRouteTesting: isRouteTesting),
-              ),
-            ),
-            pageKey: const ValueKey('routeTesting'),
-            matchedLocation: '',
-          )
-        : routerDelegate.currentConfiguration.last;
-    final matchList = lastMatch is ImperativeRouteMatch
-        ? lastMatch.matches
-        : routerDelegate.currentConfiguration;
-    return matchList.uri.toString();
-  }
-}
+final currentLocation = appRouter.routeInformationProvider.value.uri;
