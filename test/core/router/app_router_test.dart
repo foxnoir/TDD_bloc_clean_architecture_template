@@ -5,6 +5,7 @@ import 'package:tdd_clean_architecture/core/router/app_router.dart';
 import 'package:tdd_clean_architecture/core/router/app_router_names.dart';
 import 'package:tdd_clean_architecture/core/router/page_not_found.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/views/auth_screen.dart';
+import 'package:tdd_clean_architecture/l10n/app_localizations.dart';
 
 void main() {
   late AppRouter appRouter;
@@ -16,6 +17,8 @@ void main() {
   Future<void> pumpRouter(WidgetTester tester, GoRouter router) async {
     await tester.pumpWidget(
       MaterialApp.router(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         routerDelegate: router.routerDelegate,
         routeInformationParser: router.routeInformationParser,
         routeInformationProvider: router.routeInformationProvider,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tdd_clean_architecture/l10n/app_localizations.dart';
 import 'package:tdd_clean_architecture/core/di/di.dart';
 import 'package:tdd_clean_architecture/core/extensions/localization_extensions.dart';
 import 'package:tdd_clean_architecture/features/auth/presentation/cubit/auth_cubit.dart';

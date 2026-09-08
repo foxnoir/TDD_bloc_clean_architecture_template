@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tdd_clean_architecture/l10n/app_localizations.dart';
 import 'package:injectable/injectable.dart';
 import 'package:tdd_clean_architecture/core/di/di.dart';
 import 'package:tdd_clean_architecture/core/log/logger.dart';

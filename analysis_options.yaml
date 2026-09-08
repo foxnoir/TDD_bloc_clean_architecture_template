@@ -26,3 +26,10 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/generated/**"
     - "**/*.g.dart"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
